@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace api_zuno.Controllers;
+namespace zunoapi.Controllers;
 
 [ApiController]
 [Route("[controller]")]

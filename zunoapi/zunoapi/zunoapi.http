@@ -1,0 +1,6 @@
+@zunoapi_HostAddress = http://localhost:5048
+
+GET {{zunoapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

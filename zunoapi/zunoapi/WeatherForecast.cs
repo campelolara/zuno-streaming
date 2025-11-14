@@ -1,4 +1,4 @@
-namespace api_zuno
+namespace zunoapi
 {
     public class WeatherForecast
     {
