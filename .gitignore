@@ -1,15 +1,38 @@
-*.iml
-.gradle
-/local.properties
+# Android Studio
+local.properties
+.idea/
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
+.gradle/
+*.iml
+build/
+*/build/
+captures/
 .externalNativeBuild
 .cxx
-local.properties
+.DS_Store
+
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build
+bin/
+obj/
+
+# Cache
+*.cache
+*.db
+*.db-shm
+*.db-wal
+
+# NuGet
+project.assets.json
+project.nuget.cache
+
