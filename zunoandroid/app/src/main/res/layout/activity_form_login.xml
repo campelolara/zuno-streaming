@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,7 +26,7 @@
     -->
 
     <TextView
-        style="@style/TextFormLogin"
+        style="@style/Text"
         android:id="@+id/logo"
         android:text="@string/logo"
         android:textSize="50sp"
@@ -29,7 +37,7 @@
         />
 
     <TextView
-        style="@style/TextFormLogin"
+        style="@style/Text"
         android:id="@+id/bem_vindo"
         android:text="@string/bem_vindo"
         android:textSize="30sp"
@@ -40,7 +48,7 @@
         />
 
     <TextView
-        style="@style/TextFormLogin"
+        style="@style/Text"
         android:id="@+id/subtitulo_bem_vindo"
         android:text="@string/subtitulo_bem_vindo"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +67,7 @@
 
     <!--eu do futuro: falta criar o vetor assets de email e senha-->
     <EditText
-        style="@style/EditTextFormLogin"
+        style="@style/EditText"
         android:id="@+id/edit_email"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -70,7 +78,7 @@
         />
 
     <EditText
-        style="@style/EditTextFormLogin"
+        style="@style/EditText"
         android:id="@+id/edit_senha"
         android:hint="Senha"
         android:inputType="textPassword"
@@ -92,7 +100,7 @@
 
     <TextView
         android:id="@+id/texto_tela_cadastro"
-        style="@style/TextFormLogin"
+        style="@style/Text"
         android:text="@string/texto_cadastro"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
@@ -101,8 +109,5 @@
         app:layout_constraintTop_toBottomOf="@id/containerComponents"
         />
 
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
