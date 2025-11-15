@@ -4,7 +4,7 @@
     <style name="ContainerComponentsFormLogin">
         <!--toda a largura do container principal-->
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">250dp</item>
+        <item name="android:layout_height">350dp</item>
         <!--para definir um background ao container-->
         <item name="android:background">@drawable/container_components</item>
         <!--margem-->
@@ -28,9 +28,9 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/edit_text</item>
         <item name="android:padding">20dp</item>
+        <item name="android:maxLength">25</item>
         <item name="android:layout_marginLeft">40dp</item>
         <item name="android:layout_marginRight">40dp</item>
-        <item name="android:layout_marginTop">15dp</item>
         <item name="android:textColorHint">@color/white</item>
     </style>
 
@@ -39,7 +39,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">40dp</item>
         <item name="android:layout_marginRight">40dp</item>
-        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginTop">50dp</item>
         <item name="android:background">@drawable/button</item>
         <item name="android:padding">20dp</item>
 
