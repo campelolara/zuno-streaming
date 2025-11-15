@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">zunoapp</string>
+    <string name="logo">ZUNO.</string>
+    <string name="bem_vindo">Bem-vindo de volta!</string>
+    <string name="subtitulo_bem_vindo">Estamos felizes em ter você aqui novamente</string>
+    <string name="entrar">Entrar</string>
+</resources>
