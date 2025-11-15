@@ -57,6 +57,7 @@
         app:layout_constraintTop_toBottomOf="@id/subtitulo_bem_vindo"
         />
 
+    <!--eu do futuro: falta criar o vetor assets de email e senha-->
     <EditText
         style="@style/EditTextFormLogin"
         android:id="@+id/edit_email"
@@ -69,13 +70,21 @@
 
     <EditText
         style="@style/EditTextFormLogin"
-        android:id="@+id/edit_text_senha"
+        android:id="@+id/edit_senha"
         android:hint="Senha"
         android:drawableRight="@drawable/ic_eye"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
         app:layout_constraintTop_toBottomOf="@id/edit_email"
+        />
 
+    <!--Botão-->
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/Button"
+        android:text="@string/entrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_senha"
         />
 
 
