@@ -27,50 +27,66 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo"
+        android:layout_margin="50dp"
         />
 
-    <View
-        style="@style/ContainerComponentsForm"
-        android:id="@+id/containerComponents"
+    <TextView
+        style="@style/Text"
+        android:id="@+id/subtitulo_cadastrese"
+        android:text="@string/subtitulo_cadastrese"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titulo_cadastro"
+        android:layout_margin="5dp"
         />
 
     <EditText
         style="@style/EditText"
         android:id="@+id/edit_nome"
         android:autofillHints="name"
-        android:hint="Nome"
+        android:hint="@string/texto_nome"
         android:inputType="text"
         android:layout_marginTop="50dp"
-        app:layout_constraintStart_toStartOf="@id/containerComponents"
-        app:layout_constraintEnd_toEndOf="@id/containerComponents"
-        app:layout_constraintTop_toTopOf="@id/containerComponents"
-        />
+        app:layout_constraintTop_toBottomOf="@id/subtitulo_cadastrese"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         style="@style/EditText"
         android:id="@+id/edit_email"
         android:autofillHints="emailAddress"
-        android:hint="Email"
+        android:hint="@string/texto_email"
         android:inputType="textEmailAddress"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@id/containerComponents"
-        app:layout_constraintEnd_toEndOf="@id/containerComponents"
         app:layout_constraintTop_toBottomOf="@id/edit_nome"
-        />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         style="@style/EditText"
         android:id="@+id/edit_senha"
         android:autofillHints="password"
-        android:hint="Senha"
+        android:hint="@string/texto_senha"
         android:inputType="textPassword"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@id/containerComponents"
-        app:layout_constraintEnd_toEndOf="@id/containerComponents"
         app:layout_constraintTop_toBottomOf="@id/edit_email"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_cadastrar"
+        style="@style/Button"
+        android:text="@string/cadastrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_senha"
+        />
+
+    <TextView
+        android:id="@+id/texto_tela_login"
+        style="@style/Text"
+        android:text="@string/texto_login"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_cadastrar"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

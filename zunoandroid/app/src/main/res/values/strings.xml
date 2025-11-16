@@ -1,9 +1,21 @@
 <resources>
     <string name="app_name">zunoapp</string>
     <string name="logo">ZUNO.</string>
+
     <string name="bem_vindo">Bem-vindo de volta!</string>
-    <string name="subtitulo_bem_vindo">Estamos felizes em ter você aqui novamente</string>
-    <string name="entrar">Entrar</string>
-    <string name="texto_cadastro">Ainda não tem uma conta? Clique aqui</string>
     <string name="titulo_cadastro">Cadastre-se</string>
+
+    <string name="subtitulo_bem_vindo">Estamos felizes em ter você aqui novamente</string>
+    <string name="subtitulo_cadastrese">Estamos felizes em ter você aqui</string>
+
+    <string name="entrar">Entrar</string>
+    <string name="cadastrar">Cadastrar</string>
+
+    <string name="texto_cadastro">Ainda não tem uma conta? Clique aqui</string>
+    <string name="texto_login">Já tem uma conta? Clique aqui</string>
+
+    <string name="texto_nome">Nome</string>
+    <string name="texto_email">Email</string>
+    <string name="texto_senha">Senha</string>
+
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView
+<androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -15,15 +15,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     tools:context=".FormLogin">
-
-    <!--
-    cria-se um id pois os outros componentes irão se referenciar
-    -->
-
-    <!--
-    não coloquei a constraint horizontal que repete em
-    todas as textview no style pois da erro
-    -->
 
     <TextView
         style="@style/Text"
@@ -56,39 +47,26 @@
         android:layout_margin="5dp"
         />
 
-
-    <View
-        style="@style/ContainerComponentsForm"
-        android:id="@+id/containerComponents"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/subtitulo_bem_vindo"
-        />
-
     <!--eu do futuro: falta criar o vetor assets de email e senha-->
     <EditText
         style="@style/EditText"
         android:id="@+id/edit_email"
         android:autofillHints="emailAddress"
-        android:hint="Email"
+        android:hint="@string/texto_email"
         android:inputType="textEmailAddress"
         android:layout_marginTop="50dp"
-        app:layout_constraintStart_toStartOf="@id/containerComponents"
-        app:layout_constraintEnd_toEndOf="@id/containerComponents"
-        app:layout_constraintTop_toTopOf="@id/containerComponents"
-        />
+        app:layout_constraintTop_toBottomOf="@id/subtitulo_bem_vindo"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         style="@style/EditText"
         android:id="@+id/edit_senha"
         android:autofillHints="password"
-        android:hint="Senha"
+        android:hint="@string/texto_senha"
         android:inputType="textPassword"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@id/containerComponents"
-        app:layout_constraintEnd_toEndOf="@id/containerComponents"
         app:layout_constraintTop_toBottomOf="@id/edit_email"
-        />
+        tools:ignore="MissingConstraints" />
 
     <!--Botão-->
     <androidx.appcompat.widget.AppCompatButton
@@ -108,7 +86,7 @@
         android:layout_marginBottom="50dp"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@id/bt_entrar"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

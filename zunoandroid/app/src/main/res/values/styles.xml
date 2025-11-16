@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--PAGE = FORM LOGIN-->
-    <style name="ContainerComponentsForm">
-        <!--toda a largura do container principal-->
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">350dp</item>
-        <!--para definir um background ao container-->
-        <item name="android:background">@drawable/container_components</item>
-        <!--margem-->
-        <item name="android:layout_marginTop">30dp</item>
-        <item name="android:layout_marginLeft">30dp</item>
-        <item name="android:layout_marginRight">30dp</item>
-    </style>
-
     <style name="Text">
         <item name="android:textColor">@color/white</item>
 

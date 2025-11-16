@@ -11,14 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Zunoapp">
+        <!--aqui tem que ser a TelaPerfil-->
+        <activity
+            android:name=".FormLogin"
+            android:exported="false" />
         <activity
             android:name=".FormCadastro"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+        <!--aqui tem que ser a FormLogin-->
         <activity
-            android:name=".FormLogin"
+            android:name=".TelaPerfil"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

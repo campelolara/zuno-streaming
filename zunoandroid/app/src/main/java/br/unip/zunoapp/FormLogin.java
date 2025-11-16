@@ -24,6 +24,8 @@ public class FormLogin extends AppCompatActivity {
             return insets;
         });
 
+        IniciarComponentes();
+
         //adiciono um evento de click no textview
         //intent = msg utilizada para abrir outra tela
         //sai do formLogin pro FormCadastro
