@@ -5,4 +5,5 @@
     <string name="subtitulo_bem_vindo">Estamos felizes em ter você aqui novamente</string>
     <string name="entrar">Entrar</string>
     <string name="texto_cadastro">Ainda não tem uma conta? Clique aqui</string>
+    <string name="titulo_cadastro">Cadastre-se</string>
 </resources>

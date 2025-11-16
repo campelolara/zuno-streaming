@@ -58,7 +58,7 @@
 
 
     <View
-        style="@style/ContainerComponentsFormLogin"
+        style="@style/ContainerComponentsForm"
         android:id="@+id/containerComponents"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
