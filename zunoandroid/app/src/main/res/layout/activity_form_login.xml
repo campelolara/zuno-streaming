@@ -69,6 +69,7 @@
     <EditText
         style="@style/EditText"
         android:id="@+id/edit_email"
+        android:autofillHints="emailAddress"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:layout_marginTop="50dp"
@@ -80,6 +81,7 @@
     <EditText
         style="@style/EditText"
         android:id="@+id/edit_senha"
+        android:autofillHints="password"
         android:hint="Senha"
         android:inputType="textPassword"
         android:layout_marginTop="20dp"
