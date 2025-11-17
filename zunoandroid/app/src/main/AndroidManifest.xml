@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zunoapp">
         <activity
+            android:name=".TelaInicial"
+            android:exported="false" />
+        <activity
             android:name=".TelaPerfil"
             android:exported="false" />
         <activity
@@ -19,8 +22,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <!--aqui tem que ser a FormLogin-->
+            android:exported="false" /> <!-- aqui tem que ser a FormLogin -->
         <activity
             android:name=".FormLogin"
             android:exported="true">
