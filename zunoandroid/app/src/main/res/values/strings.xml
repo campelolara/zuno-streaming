@@ -10,6 +10,7 @@
 
     <string name="entrar">Entrar</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="deslogar">Deslogar</string>
 
     <string name="texto_cadastro">Ainda não tem uma conta? Clique aqui</string>
     <string name="texto_login">Já tem uma conta? Clique aqui</string>
