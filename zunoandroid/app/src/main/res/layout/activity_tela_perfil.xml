@@ -22,9 +22,7 @@
     <!--o texto vai ser substituido pelo nome do usuario logado-->
     <TextView
         android:id="@+id/textNomeUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        style="@style/Text"
         android:text="Nome Usuario"
         android:textSize="20sp"
         android:textStyle="bold"

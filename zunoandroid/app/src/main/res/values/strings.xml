@@ -19,4 +19,8 @@
     <string name="texto_email">Email</string>
     <string name="texto_senha">Senha</string>
 
+    <string name="inicio">Início</string>
+    <string name="criar">Criar</string>
+    <string name="perfil">Perfil</string>
+
 </resources>

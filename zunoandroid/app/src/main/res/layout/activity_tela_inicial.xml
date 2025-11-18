@@ -5,6 +5,100 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#242424"
     tools:context=".TelaInicial">
+
+    <View
+        android:id="@+id/containerNav"
+        style="@style/ContainerNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/logo"
+        style="@style/LogoNav"
+        app:layout_constraintStart_toStartOf="@id/containerNav"
+        app:layout_constraintTop_toTopOf="@id/containerNav"
+        />
+
+    <View
+        android:id="@+id/search"
+        style="@style/SearchNav"
+        app:layout_constraintEnd_toEndOf="@id/containerNav"
+        app:layout_constraintTop_toTopOf="@id/containerNav"
+        />
+
+    <View
+        android:id="@+id/menu"
+        style="@style/menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/menuInicio"
+        style="@style/Text"
+        android:text="@string/inicio"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toStartOf="@id/menu"
+        app:layout_constraintBottom_toBottomOf="@id/menu"
+        />
+
+    <View
+        android:id="@+id/icHome"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_home"
+        app:layout_constraintStart_toStartOf="@id/menuInicio"
+        app:layout_constraintEnd_toEndOf="@id/menuInicio"
+        app:layout_constraintBottom_toTopOf="@id/menuInicio"/>
+
+    <TextView
+        android:id="@+id/menuCriar"
+        style="@style/Text"
+        android:text="@string/criar"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toEndOf="@id/menuInicio"
+        app:layout_constraintBottom_toBottomOf="@id/menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <View
+        android:id="@+id/icCriar"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_add"
+        app:layout_constraintStart_toStartOf="@id/menuCriar"
+        app:layout_constraintEnd_toEndOf="@id/menuCriar"
+        app:layout_constraintBottom_toTopOf="@id/menuCriar"
+        />
+
+    <TextView
+        android:id="@+id/menuPerfil"
+        style="@style/Text"
+        android:text="@string/perfil"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/menu"
+        app:layout_constraintEnd_toEndOf="@id/menu"
+        />
+
+    <View
+        android:id="@+id/icPerfil"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_add"
+        app:layout_constraintStart_toStartOf="@id/menuPerfil"
+        app:layout_constraintEnd_toEndOf="@id/menuPerfil"
+        app:layout_constraintBottom_toTopOf="@id/menuPerfil"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

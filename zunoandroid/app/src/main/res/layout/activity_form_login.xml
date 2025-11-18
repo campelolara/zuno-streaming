@@ -24,6 +24,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="90dp"
         />
 
@@ -35,6 +36,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="50dp"
         />
 
@@ -44,6 +46,7 @@
         android:text="@string/subtitulo_bem_vindo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bem_vindo"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="5dp"
         />
 
@@ -87,6 +90,7 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bt_entrar"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--PAGE = FORM LOGIN-->
+    <!--PAGE = FORM LOGIN E CADASTRO-->
     <style name="Text">
         <item name="android:textColor">@color/white</item>
 
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
-
-        <item name="layout_constraintEnd_toEndOf">parent</item>
     </style>
 
     <style name="EditText">
@@ -36,6 +34,34 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <!--PAGE = -->
+    <!--PAGE INICIAL -->
+    <style name="ContainerNav">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@drawable/container_nav</item>
+    </style>
+
+    <style name="LogoNav">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">17dp</item>
+        <item name="android:text">@string/logo</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SearchNav">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@drawable/ic_search</item>
+        <item name="android:layout_margin">15dp</item>
+    </style>
+
+    <style name="menu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:background">@drawable/container_menu</item>
+    </style>
 
 </resources>
