@@ -1,130 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#242424"
-    tools:context=".TelaInicial">
+    tools:context=".TelaInicial"
+    android:background="@color/black">
 
-    <View
-        android:id="@+id/containerNav"
-        style="@style/ContainerNav"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <TextView
-        android:id="@+id/logo"
-        style="@style/LogoNav"
-        app:layout_constraintStart_toStartOf="@id/containerNav"
-        app:layout_constraintTop_toTopOf="@id/containerNav"
-        />
-
-    <View
-        android:id="@+id/search"
-        style="@style/SearchNav"
-        app:layout_constraintEnd_toEndOf="@id/containerNav"
-        app:layout_constraintTop_toTopOf="@id/containerNav"
-        />
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/containerNav"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </FrameLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/container_menu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/frameLayout"
-        app:menu="@menu/bottom_nav_menu">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-    <!--
-
-    <View
-        android:id="@+id/menu"
-        style="@style/menu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/toolbar"
+        android:background="@color/black"
+        app:title="@string/logo"
+        app:titleTextAppearance="@style/LogoNav"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
-    <TextView
-        android:id="@+id/menuInicio"
-        style="@style/Text"
-        android:text="@string/inicio"
-        android:textSize="18sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp"
-        app:layout_constraintStart_toStartOf="@id/menu"
-        app:layout_constraintBottom_toBottomOf="@id/menu"
+    <!--Container dos fragmentos de páginas
+    do menu: inicio, mais e perfil
+    -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
         />
 
-    <View
-        android:id="@+id/icHome"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="@drawable/ic_home"
-        app:layout_constraintStart_toStartOf="@id/menuInicio"
-        app:layout_constraintEnd_toEndOf="@id/menuInicio"
-        app:layout_constraintBottom_toTopOf="@id/menuInicio"/>
-
-    <TextView
-        android:id="@+id/menuCriar"
-        style="@style/Text"
-        android:text="@string/criar"
-        android:textSize="18sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp"
-        app:layout_constraintStart_toEndOf="@id/menuInicio"
-        app:layout_constraintBottom_toBottomOf="@id/menu"
-        app:layout_constraintEnd_toEndOf="parent"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:labelVisibilityMode="unlabeled"
+        android:background="@color/black_transparent"
         />
-
-    <View
-        android:id="@+id/icCriar"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="@drawable/ic_add"
-        app:layout_constraintStart_toStartOf="@id/menuCriar"
-        app:layout_constraintEnd_toEndOf="@id/menuCriar"
-        app:layout_constraintBottom_toTopOf="@id/menuCriar"
-        />
-
-    <TextView
-        android:id="@+id/menuPerfil"
-        style="@style/Text"
-        android:text="@string/perfil"
-        android:textSize="18sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintBottom_toBottomOf="@id/menu"
-        app:layout_constraintEnd_toEndOf="@id/menu"
-        />
-
-    <View
-        android:id="@+id/icPerfil"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="@drawable/ic_add"
-        app:layout_constraintStart_toStartOf="@id/menuPerfil"
-        app:layout_constraintEnd_toEndOf="@id/menuPerfil"
-        app:layout_constraintBottom_toTopOf="@id/menuPerfil"
-        />
-
-       -->
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
