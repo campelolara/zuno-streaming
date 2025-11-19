@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
+﻿namespace zunoapi.Models;
 
-namespace zunoapi.Models;
-
-[Table("Usuario")]
 public partial class Usuario
 {
-    [Key]
-    [Column("ID")]
     public int Id { get; set; }
 
-    [StringLength(50)]
-    [Unicode(false)]
     public string Nome { get; set; } = null!;
 
-    [StringLength(70)]
-    [Unicode(false)]
     public string Email { get; set; } = null!;
 
-    [InverseProperty("Usuario")]
+    public byte[] PasswordHash { get; set; } = null!;
+
+    public byte[] PasswordSalt { get; set; } = null!;
+
+    public virtual ICollection<Curtida> Curtidas { get; set; } = new List<Curtida>();
+
+    public virtual ICollection<Inscricao> Inscricoes { get; set; } = new List<Inscricao>();
+
     public virtual ICollection<Playlist> Playlists { get; set; } = new List<Playlist>();
+
+    public virtual ICollection<Visualizacao> Visualizacoes { get; set; } = new List<Visualizacao>();
 }
