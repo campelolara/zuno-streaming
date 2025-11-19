@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
+﻿namespace zunoapi.Models;
 
-namespace zunoapi.Models;
-
-[Table("Criador")]
 public partial class Criador
 {
-    [Key]
-    [Column("ID")]
     public int Id { get; set; }
 
-    [StringLength(100)]
-    [Unicode(false)]
     public string Nome { get; set; } = null!;
 
-    [InverseProperty("Criador")]
+    public string Email { get; set; } = null!;
+
     public virtual ICollection<Conteudo> Conteudos { get; set; } = new List<Conteudo>();
+
+    public virtual ICollection<Inscricao> Inscricoes { get; set; } = new List<Inscricao>();
+
+    public virtual ICollection<Playlist> Playlists { get; set; } = new List<Playlist>();
 }

@@ -7,9 +7,10 @@
     Shell.FlyoutBehavior="Flyout"
     Title="painel_de_controle">
 
+    <!--aqui era MainPage-->
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage" />
 
 </Shell>

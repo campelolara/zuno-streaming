@@ -16,6 +16,12 @@
             android:exported="false" />
         <activity
             android:name=".FormLogin"
+            android:exported="false" />
+        <activity
+            android:name=".FormCadastro"
+            android:exported="false" /> <!-- aqui tem que ser a FormLogin -->
+        <activity
+            android:name=".TelaInicial"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

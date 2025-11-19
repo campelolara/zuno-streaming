@@ -8,4 +8,5 @@
     <color name="blue_deep_black">#01020A</color>
     <color name="blue_black">#020312</color>
     <color name="blue_dark">#0A0F2A</color>
+    <color name="black_transparent">#900c0f13</color>
 </resources>

@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".FormLogin">
+    tools:context=".FormCadastro">
 
     <TextView
         style="@style/Text"
@@ -27,11 +19,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="90dp"
         />
-
+    
     <TextView
         style="@style/Text"
-        android:id="@+id/bem_vindo"
-        android:text="@string/bem_vindo"
+        android:id="@+id/titulo_cadastro"
+        android:text="@string/titulo_cadastro"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,23 +34,32 @@
 
     <TextView
         style="@style/Text"
-        android:id="@+id/subtitulo_bem_vindo"
-        android:text="@string/subtitulo_bem_vindo"
+        android:id="@+id/subtitulo_cadastrese"
+        android:text="@string/subtitulo_cadastrese"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bem_vindo"
+        app:layout_constraintTop_toBottomOf="@id/titulo_cadastro"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="5dp"
         />
 
-    <!--eu do futuro: falta criar o vetor assets de email e senha-->
+    <EditText
+        style="@style/EditText"
+        android:id="@+id/edit_nome"
+        android:autofillHints="name"
+        android:hint="@string/texto_nome"
+        android:inputType="text"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/subtitulo_cadastrese"
+        tools:ignore="MissingConstraints" />
+
     <EditText
         style="@style/EditText"
         android:id="@+id/edit_email"
         android:autofillHints="emailAddress"
         android:hint="@string/texto_email"
         android:inputType="textEmailAddress"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@id/subtitulo_bem_vindo"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_nome"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -71,27 +72,25 @@
         app:layout_constraintTop_toBottomOf="@id/edit_email"
         tools:ignore="MissingConstraints" />
 
-    <!--Botão-->
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_entrar"
+        android:id="@+id/bt_cadastrar"
         style="@style/Button"
-        android:text="@string/entrar"
+        android:text="@string/cadastrar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_senha"
         />
 
     <TextView
-        android:id="@+id/texto_tela_cadastro"
+        android:id="@+id/texto_tela_login"
         style="@style/Text"
-        android:text="@string/texto_cadastro"
+        android:text="@string/texto_login"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bt_entrar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_cadastrar"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
