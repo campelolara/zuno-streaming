@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using zunoapi.Models;
 
-namespace zunoapi.Models;
+namespace zunoapi.Infra.Context;
 
 public partial class ZunoContext : DbContext
 {
@@ -29,9 +30,11 @@ public partial class ZunoContext : DbContext
 
     public virtual DbSet<Visualizacao> Visualizacoes { get; set; }
 
-    //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-    //        => optionsBuilder.UseSqlServer("Server=IDSM-D-SIS4\\SQLEXPRESS;Database=zunodb;Trusted_Connection=True;TrustServerCertificate=True;");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        => optionsBuilder.UseSqlServer(
+                            "Server=IDSM-D-SIS4\\SQLEXPRESS;Database=zunodb;Trusted_Connection=True;TrustServerCertificate=True;");
+
+    // definir maquina humberto na string de conexão acima.
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

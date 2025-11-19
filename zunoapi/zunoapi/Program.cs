@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,12 +24,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
-// rota default de carregamento - teste de requisições com swagger
-//app.MapControllerRoute(
-//    name: "default",
-//    pattern: "{controller=Home}/{action=Index}/{id:int?}");
-
-app.MapGet("zuno", () => "olá pessoa");
 
 app.Run();

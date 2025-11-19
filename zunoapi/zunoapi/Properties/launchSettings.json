@@ -18,7 +18,8 @@
     },
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true,
+      "launchBrowser": true,  // sempre abrirá em uma nova janela
+      "launchUrl": "swagger", //abrirá automaticamente no swagger
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
