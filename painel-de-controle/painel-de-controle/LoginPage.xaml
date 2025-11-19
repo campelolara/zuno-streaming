@@ -2,42 +2,92 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="painel_de_controle.LoginPage"
-             Title="Login" Padding="20" BackgroundColor="White">
+             Title="Login" Padding="20" BackgroundColor="White" Background="{StaticResource BlueGradientBrush}">
     <ScrollView>
-        <VerticalStackLayout Padding="30" VerticalOptions="Center" Spacing="20">
-        <Label 
-            Text="Bem Vindo de Volta!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" TextColor="#333" FontAttributes="Bold"/>
+        <Border 
+            Stroke="#fff" 
+            StrokeThickness="1" 
+            Background="Transparent" 
+            StrokeShape="RoundRectangle 10"
+            Margin="250,50"
+            MinimumWidthRequest="200"
+            MaximumWidthRequest="1200"
+            MaximumHeightRequest="600"
+            >
+            
+            <VerticalStackLayout Style="{StaticResource StackRegistro}">
 
-            <Label Text="Email" FontSize="14" TextColor="#333"></Label>
+                <Label 
+                    Text="Bem Vindo de Volta!"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" 
+                    TextColor="#333" 
+                    FontAttributes="Bold"/> 
 
-            <Border Stroke="#ddd" StrokeThickness="1" Background="White" StrokeShape="RoundRectangle 10">
-                <Entry
-                    x:Name="EmailEntry"
-                    Placeholder="Digite seu Email"
-                    FontSize="16"
-                    TextColor="#333"
-                    BackgroundColor="Transparent" PlaceholderColor="#aaa"
-                    Margin="10,0"/>
-            </Border>
+                <Label Style="{StaticResource LabelRegistro}" Text="Email" />
 
-            <Label Text="Senha" FontSize="14" TextColor="#333"></Label>
+                <Border 
+                    Stroke="#ddd" 
+                    StrokeThickness="1" 
+                    Background="White" 
+                    StrokeShape="RoundRectangle 10"
+                    MinimumWidthRequest="140"
+                    MaximumWidthRequest="600"
+                    
+                    >
+                    <Entry
+                        x:Name="EmailEntry"
+                        Placeholder="Digite seu Email"
+                        FontSize="16"
+                        TextColor="#333"
+                        BackgroundColor="Transparent"
+                        PlaceholderColor="#aaa" />
+                </Border>
 
-            <Border Stroke="#ddd" StrokeThickness="1" Background="White" StrokeShape="RoundRectangle 10">
-                <Entry
-        x:Name="SenhaEntry"
-        Placeholder="Digite sua Senha"
-        FontSize="16"
-        TextColor="#333"
-        BackgroundColor="Transparent" PlaceholderColor="#aaa"
-        Margin="10,0"/>
-            </Border>
+                <Label Style="{StaticResource LabelRegistro}" Text="Senha" />
 
-            <Button Text="Login"
-                    BackgroundColor="#007AFF">
+                <Border 
+                    Stroke="#ddd" 
+                    StrokeThickness="1" 
+                    Background="White" 
+                    StrokeShape="RoundRectangle 10"
+                    MinimumWidthRequest="140"
+                    MaximumWidthRequest="600">
+                    <Entry
+                        x:Name="SenhaEntry"
+                        Placeholder="Digite sua Senha"
+                        FontSize="16"
+                        TextColor="#333"
+                        BackgroundColor="Transparent"
+                        PlaceholderColor="#aaa" />
+                </Border>
+
+                <Button 
+                    Text="Login"
+                    TextColor="White"
+                    Background="{StaticResource WhiteGradientBrush}"
+                    FontSize="18"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    MinimumWidthRequest="140"
+                    MaximumWidthRequest="600"
+                    Clicked="OnLoginButtonCliked"
+                    />
+
+
+                <Label 
+                    Style="{StaticResource LabelRegistro}" 
+                    Text="Não possui uma conta? Clique aqui"
+                    HorizontalOptions="Center">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterLabelTapped" />
+                    </Label.GestureRecognizers>
+
+                </Label>
                 
-            </Button>
-        </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Border>
+
     </ScrollView>
 </ContentPage>
