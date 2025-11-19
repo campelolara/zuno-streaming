@@ -10,17 +10,34 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" TextColor="#333" FontAttributes="Bold"/>
 
-            <Label
-                Text="Username"
-                FontSize="14"
-                TextColor="#333"></Label>
+            <Label Text="Email" FontSize="14" TextColor="#333"></Label>
 
-            <Border 
-                Stroke="#ddd"
-                StrokeThickness="1"
-                Background="White"
-                StrokeShape="RoundRectangle 10">        
+            <Border Stroke="#ddd" StrokeThickness="1" Background="White" StrokeShape="RoundRectangle 10">
+                <Entry
+                    x:Name="EmailEntry"
+                    Placeholder="Digite seu Email"
+                    FontSize="16"
+                    TextColor="#333"
+                    BackgroundColor="Transparent" PlaceholderColor="#aaa"
+                    Margin="10,0"/>
             </Border>
+
+            <Label Text="Senha" FontSize="14" TextColor="#333"></Label>
+
+            <Border Stroke="#ddd" StrokeThickness="1" Background="White" StrokeShape="RoundRectangle 10">
+                <Entry
+        x:Name="SenhaEntry"
+        Placeholder="Digite sua Senha"
+        FontSize="16"
+        TextColor="#333"
+        BackgroundColor="Transparent" PlaceholderColor="#aaa"
+        Margin="10,0"/>
+            </Border>
+
+            <Button Text="Login"
+                    BackgroundColor="#007AFF">
+                
+            </Button>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
