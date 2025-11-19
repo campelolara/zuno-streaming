@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="painel_de_controle.LoginPage"
+             Title="Login" Padding="20" BackgroundColor="White" Background="{StaticResource BlueGradientBrush}">
+    <ScrollView>
+        <Border 
+            Stroke="#fff" 
+            StrokeThickness="1" 
+            Background="Transparent" 
+            StrokeShape="RoundRectangle 10"
+            Margin="250,50"
+            MinimumWidthRequest="200"
+            MaximumWidthRequest="1200"
+            MaximumHeightRequest="600"
+            >
+            
+            <VerticalStackLayout Style="{StaticResource StackRegistro}">
+
+                <Label 
+                    Text="Bem Vindo de Volta!"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" 
+                    TextColor="#333" 
+                    FontAttributes="Bold"/> 
+
+                <Label Style="{StaticResource LabelRegistro}" Text="Email" />
+
+                <Border 
+                    Stroke="#ddd" 
+                    StrokeThickness="1" 
+                    Background="White" 
+                    StrokeShape="RoundRectangle 10"
+                    MinimumWidthRequest="140"
+                    MaximumWidthRequest="600"
+                    
+                    >
+                    <Entry
+                        x:Name="EmailEntry"
+                        Placeholder="Digite seu Email"
+                        FontSize="16"
+                        TextColor="#333"
+                        BackgroundColor="Transparent"
+                        PlaceholderColor="#aaa" />
+                </Border>
+
+                <Label Style="{StaticResource LabelRegistro}" Text="Senha" />
+
+                <Border 
+                    Stroke="#ddd" 
+                    StrokeThickness="1" 
+                    Background="White" 
+                    StrokeShape="RoundRectangle 10"
+                    MinimumWidthRequest="140"
+                    MaximumWidthRequest="600">
+                    <Entry
+                        x:Name="SenhaEntry"
+                        Placeholder="Digite sua Senha"
+                        FontSize="16"
+                        TextColor="#333"
+                        BackgroundColor="Transparent"
+                        PlaceholderColor="#aaa" />
+                </Border>
+
+                <Button 
+                    Text="Login"
+                    TextColor="White"
+                    Background="{StaticResource WhiteGradientBrush}"
+                    FontSize="18"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    MinimumWidthRequest="140"
+                    MaximumWidthRequest="600"
+                    Clicked="OnLoginButtonCliked"
+                    />
+
+
+                <Label 
+                    Style="{StaticResource LabelRegistro}" 
+                    Text="Não possui uma conta? Clique aqui"
+                    HorizontalOptions="Center">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterLabelTapped" />
+                    </Label.GestureRecognizers>
+
+                </Label>
+                
+            </VerticalStackLayout>
+        </Border>
+
+    </ScrollView>
+</ContentPage>
