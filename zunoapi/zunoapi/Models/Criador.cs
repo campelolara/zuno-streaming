@@ -11,6 +11,4 @@ public partial class Criador
     public virtual ICollection<Conteudo> Conteudos { get; set; } = new List<Conteudo>();
 
     public virtual ICollection<Inscricao> Inscricoes { get; set; } = new List<Inscricao>();
-
-    public virtual ICollection<Playlist> Playlists { get; set; } = new List<Playlist>();
 }
