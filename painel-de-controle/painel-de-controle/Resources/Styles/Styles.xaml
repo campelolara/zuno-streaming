@@ -461,6 +461,6 @@
         <Setter Property="BackgroundColor" Value="Transparent"/>
     </Style>
 
-    <!--Margin="250,0" Padding="30" VerticalOptions="Center" Spacing="20" Background="Transparent"-->
+    <!---->
 
 </ResourceDictionary>
