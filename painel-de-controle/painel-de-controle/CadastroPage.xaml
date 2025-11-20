@@ -2,24 +2,62 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="painel_de_controle.CadastroPage"
-             Title="Cadastro" BackgroundColor="White" Padding="20">
+             Title="Cadastro" BackgroundColor="White" Background="{StaticResource BlueGradientBrush}">
     <ScrollView>
-    <VerticalStackLayout>
-        <Label 
-            Text="Crie uma conta!" FontSize="28" FontAttributes="Bold" TextColor="#333"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Border
+        Stroke="White"
+        StrokeThickness="0"
+        StrokeShape="20"
+        Background="{StaticResource WhiteGradientBrush}"
+        MaximumHeightRequest="500"
+        MaximumWidthRequest="700"
+        MinimumWidthRequest="400">
+            <VerticalStackLayout 
+            Style="{StaticResource StackRegistro}"
+            Padding="90,30"
+            >
+                <Label Style="{StaticResource LabelTitleRegister}" Text="Crie uma conta"/>
 
-        <Label Text="Nome" FontSize="14" TextColor="#333"></Label>
-            <Border Stroke="#ddd" StrokeThickness="1" Background="White" StrokeShape="RoundRectangle 10" Padding="10">
-                <Entry
-                    x:Name="NameEntry"
-                    Placeholder="Insira seu nome"
-                    Keyboard="Text"
-                    FontSize="16"
-                    TextColor="#333"
-                    BackgroundColor="Transparent" PlaceholderColor="#aaa"></Entry>
-            </Border>
-    </VerticalStackLayout>
+                <Label Style="{StaticResource LabelRegistro}" Text="Email"/>
+
+                <Border Style="{StaticResource BorderInput}">
+                    <Entry
+                    Style="{StaticResource Entry}"
+                    x:Name="RegEmailEntry"
+                        Keyboard="Email"
+                    Placeholder="Digite seu Email"/>
+                </Border>
+
+                <Label Style="{StaticResource LabelRegistro}" Text="Senha"/>
+
+                <Border Style="{StaticResource BorderInput}">
+                    <Entry
+                    Style="{StaticResource Entry}"
+                    x:Name="RegPasswordEntry"
+                    Placeholder="Digite sua Senha"
+                    IsPassword="True"
+                     />
+                </Border>
+
+                <Button 
+                    Style="{StaticResource Button}" 
+                    Text="Cadastre-se"
+                    Clicked="OnRegisterButtonClicked"
+                    />
+
+                <Label 
+                Style="{StaticResource LabelRegistro}" 
+                Text="Já possui uma conta? Faça Login"
+                HorizontalOptions="Center"
+                Margin="0,10">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLoginLabelTapped" />
+                    </Label.GestureRecognizers>
+
+                </Label>
+
+            </VerticalStackLayout>
+        </Border>
     </ScrollView>
 </ContentPage>
