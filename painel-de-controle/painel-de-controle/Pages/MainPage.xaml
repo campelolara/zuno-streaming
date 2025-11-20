@@ -32,11 +32,21 @@
                             <HorizontalStackLayout Spacing="5">
                                 <Label Text="{Binding Nome}" 
                                        TextColor="White" 
-                                       VerticalOptions="Center"/>
+                                       VerticalOptions="Center">
+                                    <Label.Triggers>
+                                        <DataTrigger
+                                            Binding="{Binding IsSelected}"
+                                            TargetType="Label"
+                                            Value="True">
+                                            <Setter Property="FontAttributes" Value="Bold"></Setter>
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
                             </HorizontalStackLayout>
                             <Border.Triggers>
-                                <DataTrigger TargetType="Border">
-                                    
+                                <DataTrigger TargetType="Border" Binding="{Binding IsSelected}" Value="True">
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Blue}"></Setter>
+                                    <Setter Property="StrokeThickness" Value="0"></Setter>
                                 </DataTrigger>
                             </Border.Triggers>
                         </Border>

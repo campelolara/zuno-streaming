@@ -20,9 +20,9 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 		//registra o viewmodel e a página principal para injeção de dependência
-		builder.Services
-			.AddSingleton<MeusConteudosViewModel>()
-			.AddSingleton<MainPage>();
+		builder.Services.AddSingleton<MeusConteudosViewModel>();
+        builder.Services.AddSingleton<MainPage>();
+
 		return builder.Build();
 	}
 }
