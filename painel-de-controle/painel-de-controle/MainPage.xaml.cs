@@ -6,20 +6,20 @@
 
         public MainPage()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-            count++;
+            base.OnAppearing();
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            // Remove o menu lateral
+            Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            // Remove o título da página
+            Shell.SetNavBarIsVisible(this, false);
         }
+
     }
 
 }
