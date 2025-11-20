@@ -5,16 +5,15 @@
              Title="Login" Padding="20" BackgroundColor="White" Background="{StaticResource BlueGradientBrush}">
     <ScrollView>
         <Border 
-            Stroke="#fff" 
-            StrokeThickness="1" 
-            Background="Transparent" 
+            StrokeThickness="1"
             StrokeShape="RoundRectangle 10"
+            Background="White"
             Margin="250,50"
             MinimumWidthRequest="200"
             MaximumWidthRequest="1200"
             MaximumHeightRequest="600"
             >
-            
+
             <VerticalStackLayout Style="{StaticResource StackRegistro}">
 
                 <Label 
@@ -27,10 +26,9 @@
                 <Label Style="{StaticResource LabelRegistro}" Text="Email" />
 
                 <Border 
-                    Stroke="#ddd" 
-                    StrokeThickness="1" 
-                    Background="White" 
+                    StrokeThickness="1"
                     StrokeShape="RoundRectangle 10"
+                    Background="White"
                     MinimumWidthRequest="140"
                     MaximumWidthRequest="600"
                     
@@ -47,10 +45,9 @@
                 <Label Style="{StaticResource LabelRegistro}" Text="Senha" />
 
                 <Border 
-                    Stroke="#ddd" 
-                    StrokeThickness="1" 
-                    Background="White" 
+                    StrokeThickness="1"
                     StrokeShape="RoundRectangle 10"
+                    Background="White"
                     MinimumWidthRequest="140"
                     MaximumWidthRequest="600">
                     <Entry
@@ -62,17 +59,23 @@
                         PlaceholderColor="#aaa" />
                 </Border>
 
-                <Button 
+                <Border 
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 10"
+                    Background="White"
+                    MinimumWidthRequest="140"
+                    MaximumWidthRequest="600">
+                    <Button 
                     Text="Login"
-                    TextColor="White"
-                    Background="{StaticResource WhiteGradientBrush}"
+                    BackgroundColor="White"
+                    TextColor="White"      
                     FontSize="18"
                     CornerRadius="10"
                     HeightRequest="50"
-                    MinimumWidthRequest="140"
-                    MaximumWidthRequest="600"
+                    
                     Clicked="OnLoginButtonCliked"
                     />
+                </Border>
 
 
                 <Label 
