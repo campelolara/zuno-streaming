@@ -488,13 +488,6 @@
         <Setter Property="TextColor" Value="White"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
-    <Style TargetType="Label" x:Key="LabelTitlePages">
-        <Setter Property="FontSize" Value="34"/>
-        <Setter Property="VerticalOptions" Value="Center"/>
-        <Setter Property="TextColor" Value="White"/>
-        <Setter Property="FontAttributes" Value="Bold"/>
-        <Setter Property="Margin" Value="20"/>
-    </Style>
 
     <!---->
 

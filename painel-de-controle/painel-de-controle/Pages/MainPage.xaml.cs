@@ -1,31 +1,28 @@
-﻿using painel_de_controle.Models;
-using painel_de_controle.ViewModels;
-using System.Threading.Tasks;
+﻿
+using painel_de_controle.Models;
 
 namespace painel_de_controle
 {
 
     public partial class MainPage : ContentPage
     {
-
-        private readonly MeusConteudosViewModel _meusConteudosViewModel;
-       
-        public List<TipoModel> Tipos { get; set; }
-        public MainPage(MeusConteudosViewModel meusConteudosViewModel)
+        public List<Tipo> Tipos { get; set; }
+        public MainPage()
         {
             InitializeComponent();
 
+            //Simulação de Categorias - Substituir por futura chamada de API
+            Tipos = new List<Tipo>
+            {
+                new Tipo { Id = 1, Nome = "Vídeos"},
+                new Tipo { Id = 2, Nome = "Podcasts"},
+                new Tipo { Id = 3, Nome = "Músicas"},
+            };
+
             //vincula os dados à interface
-            _meusConteudosViewModel = meusConteudosViewModel;
-            BindingContext = _meusConteudosViewModel;
-            Initialize();
+            BindingContext = this;
         }
-        // Inicializa os dados quando a página é carregada
-        private async void Initialize()
-        {
-            await _meusConteudosViewModel.InitializeAsync();
-        }
-        
+
         
 
     }

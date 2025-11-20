@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using painel_de_controle.ViewModels;
 
 namespace painel_de_controle;
 
@@ -19,9 +18,12 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+<<<<<<< HEAD
 		//registra o viewmodel e a página principal para injeção de dependência
 		builder.Services.AddSingleton<MeusConteudosViewModel>();
         builder.Services.AddSingleton<MainPage>();
+=======
+>>>>>>> parent of 1a8a0d4 (painel de controle)
 
 		return builder.Build();
 	}

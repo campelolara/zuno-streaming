@@ -2,8 +2,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:painel_de_controle.Models"
-             xmlns:vm="clr-namespace:painel_de_controle.ViewModels"
-             x:DataType="vm:MeusConteudosViewModel"
              x:Class="painel_de_controle.MainPage" 
              Title="Meus Conteudos" 
              Background="Black"
@@ -13,17 +11,16 @@
 
     <Grid>
         <Grid Grid.Column="0" RowDefinitions="Auto, Auto, *" RowSpacing="10">
-            <Label Grid.Row="0" 
-                   Text="Meus Conteúdos" 
-                   Style="{StaticResource LabelTitlePages}"></Label>
+            <Label Grid.Row="0" Text="Meus Conteúdos" TextColor="White"></Label>
 
             <!--ItemsSource é onde pega as categorias do banco de dados-->
-            <CollectionView Grid.Row="1" ItemsSource="{Binding Tipos}" x:Name="TabelaTipos">
+            <CollectionView Grid.Row="1" ItemsSource="{Binding Tipos}" >
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
+<<<<<<< HEAD
                     <DataTemplate x:DataType="models:TipoModel">
                         <Border Padding="20, 10" 
                                 BackgroundColor="Transparent"
@@ -50,8 +47,15 @@
                                 </DataTrigger>
                             </Border.Triggers>
                         </Border>
+=======
+                    <DataTemplate>
+                        <Frame Padding="10" BorderColor="White" CornerRadius="10">
+                            <Label Text="{Binding Nome}" TextColor="White" />
+                        </Frame>
+>>>>>>> parent of 1a8a0d4 (painel de controle)
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
+                
             </CollectionView>
             
             <Label Grid.Row="2" Text="lista de categorias" TextColor="White"></Label>
