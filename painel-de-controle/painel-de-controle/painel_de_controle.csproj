@@ -73,19 +73,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AccountPage.xaml">
+	  <MauiXaml Update="Pages\AccountPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="AnalysisPage.xaml">
+	  <MauiXaml Update="Pages\AnalysisPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="CadastroPage.xaml">
+	  <MauiXaml Update="Pages\CadastroPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="CreatePage.xaml">
+	  <MauiXaml Update="Pages\CreatePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="LoginPage.xaml">
+	  <MauiXaml Update="Pages\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\Brushes.xaml">
