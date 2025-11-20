@@ -123,19 +123,13 @@ public partial class ZunoContext : DbContext
             entity.ToTable("Playlist");
 
             entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.CriadorId).HasColumnName("CriadorID");
             entity.Property(e => e.Nome)
                 .HasMaxLength(100)
                 .IsUnicode(false);
             entity.Property(e => e.UsuarioId).HasColumnName("UsuarioID");
 
-            entity.HasOne(d => d.Criador).WithMany(p => p.Playlists)
-                .HasForeignKey(d => d.CriadorId)
-                .HasConstraintName("FK_Playlist_Criador");
-
             entity.HasOne(d => d.Usuario).WithMany(p => p.Playlists)
                 .HasForeignKey(d => d.UsuarioId)
-                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Playlist_Usuario");
         });
 
