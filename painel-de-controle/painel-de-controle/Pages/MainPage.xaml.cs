@@ -17,7 +17,6 @@ namespace painel_de_controle
                 new Tipo { Id = 1, Nome = "Vídeos"},
                 new Tipo { Id = 2, Nome = "Podcasts"},
                 new Tipo { Id = 3, Nome = "Músicas"},
-                new Tipo { Id = 4, Nome = "Playlists"},
             };
 
             //vincula os dados à interface
