@@ -26,13 +26,16 @@ public partial class ZunoContext : DbContext
 
     public virtual DbSet<Playlist> Playlists { get; set; }
 
+    public virtual DbSet<Tipo> Tipos { get; set; }
+
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     public virtual DbSet<Visualizacao> Visualizacoes { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer(
-                            "Server=IDSM-D-SIS4\\SQLEXPRESS;Database=zunodb;Trusted_Connection=True;TrustServerCertificate=True;");
+    // JA ESTA DEFINIDO NO APPSETTINGS E PROGRAM.CS
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //    => optionsBuilder.UseSqlServer(
+    //                        "Server=IDSM-D-SIS4\\SQLEXPRESS;Database=zunodb;Trusted_Connection=True;TrustServerCertificate=True;");
 
     // definir maquina humberto na string de conexão acima.
 
@@ -44,9 +47,7 @@ public partial class ZunoContext : DbContext
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.CriadorId).HasColumnName("CriadorID");
-            entity.Property(e => e.Tipo)
-                .HasMaxLength(50)
-                .IsUnicode(false);
+            entity.Property(e => e.TipoId).HasColumnName("TipoID");
             entity.Property(e => e.Titulo)
                 .HasMaxLength(250)
                 .IsUnicode(false);
@@ -54,6 +55,10 @@ public partial class ZunoContext : DbContext
             entity.HasOne(d => d.Criador).WithMany(p => p.Conteudos)
                 .HasForeignKey(d => d.CriadorId)
                 .HasConstraintName("FK_Conteudo_Criador");
+
+            entity.HasOne(d => d.Tipo).WithMany(p => p.Conteudos)
+                .HasForeignKey(d => d.TipoId)
+                .HasConstraintName("FK_Conteudo_Tipo");
         });
 
         modelBuilder.Entity<Criador>(entity =>
@@ -67,6 +72,8 @@ public partial class ZunoContext : DbContext
             entity.Property(e => e.Nome)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+            entity.Property(e => e.PasswordHash).HasMaxLength(500);
+            entity.Property(e => e.PasswordSalt).HasMaxLength(500);
         });
 
         modelBuilder.Entity<Curtida>(entity =>
@@ -131,6 +138,16 @@ public partial class ZunoContext : DbContext
             entity.HasOne(d => d.Usuario).WithMany(p => p.Playlists)
                 .HasForeignKey(d => d.UsuarioId)
                 .HasConstraintName("FK_Playlist_Usuario");
+        });
+
+        modelBuilder.Entity<Tipo>(entity =>
+        {
+            entity.ToTable("Tipo");
+
+            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Nome)
+                .HasMaxLength(50)
+                .IsUnicode(false);
         });
 
         modelBuilder.Entity<Usuario>(entity =>

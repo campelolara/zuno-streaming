@@ -7,8 +7,8 @@ namespace zunoapi.Infra.Repository
   
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly ZunoContext _context;
-        private readonly DbSet<T> _dbSet;
+        protected readonly ZunoContext _context;  //referência ao contexto do banco de dados
+        protected readonly DbSet<T> _dbSet;       //referência ao conjunto de entidades do tipo T que serão manipuladas
 
         public Repository(ZunoContext context)
         {
