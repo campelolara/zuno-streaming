@@ -23,7 +23,7 @@ public partial class LoginPage : ContentPage
     //navega para a página de cadastro
     private async void OnRegisterLabelTapped(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new CadastroPage());
+        await Navigation.PushAsync(new AppShell());
     }
     private async void OnLoginButtonCliked(object sender, EventArgs e)
     {
@@ -36,7 +36,9 @@ public partial class LoginPage : ContentPage
         if(EmailEntry.Text == "email" && PasswordEntry.Text == "123")
         {
             //navega para a página principal
-            await Navigation.PushAsync(new MainPage());
+            //Application.Current.MainPage = new AppShell(); quando termina o login, define a mainpage como appshell
+            var page = MauiProgram.Services.GetRequiredService<MainPage>();
+            await Navigation.PushAsync(page);
         } else
         {
             await DisplayAlert("Erro", "Email ou senha inválidos", "OK");

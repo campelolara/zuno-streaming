@@ -23,6 +23,16 @@
                 <Border Style="{StaticResource BorderInput}">
                     <Entry
                     Style="{StaticResource Entry}"
+                    x:Name="RegNameEntry"
+                        Keyboard="Text"
+                    Placeholder="Digite seu Nome"/>
+                </Border>
+
+                <Label Style="{StaticResource LabelRegistro}" Text="Email"/>
+
+                <Border Style="{StaticResource BorderInput}">
+                    <Entry
+                    Style="{StaticResource Entry}"
                     x:Name="RegEmailEntry"
                         Keyboard="Email"
                     Placeholder="Digite seu Email"/>
