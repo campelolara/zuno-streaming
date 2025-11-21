@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="painel_de_controle.LoginPage"
+             Title="Login" BackgroundColor="White" Background="{StaticResource BlueGradientBrush}">
+    <ScrollView>
+        <Border
+            Stroke="White"
+            StrokeThickness="0"
+            StrokeShape="20"
+            Background="{StaticResource WhiteGradientBrush}"
+            MaximumHeightRequest="500"
+            MaximumWidthRequest="700"
+            MinimumWidthRequest="400">     
+            <VerticalStackLayout 
+                Style="{StaticResource StackRegistro}"
+                Padding="90,30"
+                >
+                <Label Style="{StaticResource LabelTitleRegister}" Text="Bem-Vindo de Volta!"/>
+
+                <Label Style="{StaticResource LabelRegistro}" Text="Email"/>
+
+                <Border Style="{StaticResource BorderInput}">
+                    <Entry
+                        Style="{StaticResource Entry}"
+                        x:Name="EmailEntry"
+                        Placeholder="Digite seu Email"/>
+                </Border>
+
+                <Label Style="{StaticResource LabelRegistro}" Text="Senha"/>
+
+                <Border Style="{StaticResource BorderInput}">
+                    <Entry
+                        Style="{StaticResource Entry}"
+                        x:Name="PasswordEntry"
+                        Placeholder="Digite sua Senha"
+                         />
+                </Border>
+
+                    <Button 
+                        Style="{StaticResource Button}" 
+                        Text="Login"
+                        Clicked="OnLoginButtonCliked"
+                        />
+              
+                <Label 
+                    Style="{StaticResource LabelRegistro}" 
+                    Text="Não possui uma conta? Cadastre-se"
+                    HorizontalOptions="Center"
+                    Margin="0,10">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterLabelTapped" />
+                    </Label.GestureRecognizers>
+
+                </Label>
+
+            </VerticalStackLayout>
+        </Border>
+    </ScrollView>
+</ContentPage>

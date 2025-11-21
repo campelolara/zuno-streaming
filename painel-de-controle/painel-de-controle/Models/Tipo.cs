@@ -1,0 +1,12 @@
+using System.Security.Cryptography.X509Certificates;
+using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace painel_de_controle.Models;
+
+// Modelo de dados para Categoria
+public class Tipo : ObservableObject
+{
+    public int Id { get; set; }
+    public string Nome { get; set; }
+    
+}

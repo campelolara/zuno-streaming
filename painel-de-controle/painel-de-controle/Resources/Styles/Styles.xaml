@@ -451,14 +451,42 @@
     <!--Adicionadas-->
     <Style TargetType="Label" x:Key="LabelRegistro">
         <Setter Property="TextColor" Value="{StaticResource White}" />
-        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
     <Style TargetType="VerticalStackLayout" x:Key="StackRegistro">
-        <Setter Property="Padding" Value="30"/>
         <Setter Property="VerticalOptions" Value="Center"/>
         <Setter Property="Spacing" Value="20"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="Button">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="HeightRequest" Value="50"/>
+    </Style>
+
+    <Style TargetType="Entry" x:Key="Entry">
+        <Setter Property="TextColor" Value="White"/>
         <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="PlaceholderColor" Value="{StaticResource Gray300}"/>
+    </Style>
+
+    <Style TargetType="Border" x:Key="BorderInput">
+        <Setter Property="StrokeThickness" Value="3"/>
+        <Setter Property="StrokeShape" Value="RoundRectangle 15"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="LabelTitleRegister">
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
     <!---->
