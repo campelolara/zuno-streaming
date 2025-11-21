@@ -9,7 +9,7 @@
         StrokeThickness="0"
         StrokeShape="20"
         Background="{StaticResource WhiteGradientBrush}"
-        MaximumHeightRequest="500"
+        MaximumHeightRequest="600"
         MaximumWidthRequest="700"
         MinimumWidthRequest="400">
             <VerticalStackLayout 
@@ -18,7 +18,7 @@
             >
                 <Label Style="{StaticResource LabelTitleRegister}" Text="Crie uma conta"/>
 
-                <Label Style="{StaticResource LabelRegistro}" Text="Email"/>
+                <Label Style="{StaticResource LabelRegistro}" Text="Nome"/>
 
                 <Border Style="{StaticResource BorderInput}">
                     <Entry

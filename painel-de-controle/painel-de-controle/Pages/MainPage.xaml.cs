@@ -12,6 +12,7 @@ namespace painel_de_controle
         public MainPage(MeusConteudosViewModel vm)
         {
             InitializeComponent();
+            Shell.SetNavBarIsVisible(this, false);
             _meusConteudosViewModel = vm;
             BindingContext = vm;
             Initialize();

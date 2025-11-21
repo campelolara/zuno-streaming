@@ -5,6 +5,7 @@ public partial class CreatePage : ContentPage
 	public CreatePage()
 	{
 		InitializeComponent();
-	}
+        Shell.SetNavBarIsVisible(this, false);
+    }
    
 }

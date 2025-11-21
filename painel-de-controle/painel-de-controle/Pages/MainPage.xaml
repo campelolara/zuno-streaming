@@ -60,7 +60,45 @@
 
             </CollectionView>
 
-            <Label Grid.Row="2" Text="lista de tipos" TextColor="White"></Label>
+            <Grid Grid.Row="2">
+                <CollectionView ItemsSource="{Binding Conteudos}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" 
+                                         Span="4"
+                                         HorizontalItemSpacing="10"
+                                         VerticalItemSpacing="10"> 
+                        </GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:ConteudoItemModel">
+                            <Border StrokeThickness="1">
+                                <VerticalStackLayout>
+                                    <Border HeightRequest="150"
+                                            WidthRequest="250"
+                                            BackgroundColor="{StaticResource Gray400}"
+                                            StrokeShape="RoundRectangle 20">
+                                    </Border>
+
+                                    <Grid ColumnDefinitions="*, Auto">
+                                        <VerticalStackLayout Grid.Column="0">
+                                            <Label Text="{Binding Titulo}" />
+                                            <Label Text="{Binding Visualizacao}" />
+                                        </VerticalStackLayout>
+
+                                        <ImageButton Grid.Column="1"
+                                                     Source="tres_pontos.png"
+                                                     Background="Transparent"
+                                                     VerticalOptions="Center" />    
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    
+                </CollectionView>
+            </Grid>
+            
         </Grid>
     </Grid>
 
