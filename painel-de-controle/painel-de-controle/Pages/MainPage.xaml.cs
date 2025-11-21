@@ -7,8 +7,7 @@ namespace painel_de_controle
 
     public partial class MainPage : ContentPage
     {
-
-        private readonly MeusConteudosViewModel _meusConteudosViewModel;
+                private readonly MeusConteudosViewModel _meusConteudosViewModel;
         public MainPage(MeusConteudosViewModel vm)
         {
             InitializeComponent();

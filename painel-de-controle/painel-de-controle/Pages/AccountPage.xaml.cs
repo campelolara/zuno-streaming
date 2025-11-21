@@ -6,6 +6,8 @@ public partial class AccountPage : ContentPage
 	{
 		InitializeComponent();
         Shell.SetNavBarIsVisible(this, false);
+
     }
 
+    
 }

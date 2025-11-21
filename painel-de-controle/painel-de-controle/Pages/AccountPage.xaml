@@ -5,9 +5,9 @@
              Title="AccountPage"
              Shell.NavBarIsVisible="False">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <VerticalStackLayout Padding="20">
+            <Label x:Name="NomeLabel" FontSize="24" />
+            <Label x:Name="EmailLabel" FontSize="18" />
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
