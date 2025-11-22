@@ -4,7 +4,193 @@
              x:Class="painel_de_controle.CreatePage"
              Title="CreatePage" Background="Black"
              Shell.NavBarIsVisible="False">
-    <VerticalStackLayout>
+    
+    <Grid ColumnDefinitions="*">
+        <Grid Grid.Column="0" RowDefinitions="Auto, Auto, Auto, *" RowSpacing="10">
+            <Label Grid.Row="0" Text="Enviar Conteúdos" TextColor="White" FontSize="30" Margin="20" FontAttributes="Bold"></Label>
+
+            <Border Grid.Row="1"
+                    WidthRequest="250"
+                    HeightRequest="250"
+                    BackgroundColor="Gray"
+                    Stroke="White"
+                    StrokeThickness="0"
+                    StrokeShape="Ellipse"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="20">
+                <Button    
+                    ImageSource="upload.png"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill">
+                </Button>
+            </Border>
+
+            <Label Grid.Row="2" Text="Selecione o arquivo para fazer o envio" TextColor="White" FontSize="18" Margin="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+
+            <Border Grid.Row="3"
+                    WidthRequest="250"
+                    HeightRequest="80"
+                    BackgroundColor="White"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 50"
+                    VerticalOptions="Start"
+                    Margin="20">
+                <Button    
+                    Text="Selecione os arquivos"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    BackgroundColor="Transparent">
+                </Button>
+            </Border>
+        </Grid>
+    </Grid>
+    
+    
+    <!--
+    <Grid Padding="20"
+          RowDefinitions="Auto, *"
+          ColumnDefinitions="*, 150">
+
         
-    </VerticalStackLayout>
+        <Label Text="Detalhes"
+               TextColor="White"
+               FontSize="30"
+               FontAttributes="Bold"
+               Grid.Row="0" />
+
+        
+        <Grid Grid.Row="1"
+              ColumnDefinitions="*, 260"
+              RowSpacing="18"
+              ColumnSpacing="20">
+
+            
+            <VerticalStackLayout Grid.Column="0" Spacing="18">
+
+                
+                <VerticalStackLayout>
+                    
+                    <Label Text="Título do Conteúdo"
+                           TextColor="White" Margin="0, 20, 0, 10"/>
+                    <Entry Placeholder="Título do Conteúdo"
+                           HeightRequest="45"
+                           WidthRequest="500"
+                           HorizontalOptions="Start"
+                           BackgroundColor="#3A3A3A"
+                           TextColor="White"
+                           PlaceholderColor="#999999"
+                            />
+                </VerticalStackLayout>
+
+                
+                <VerticalStackLayout>
+                    <Label Text="Descrição"
+                           TextColor="White" Margin="0, 20, 0, 10"/>
+
+                    <Entry Placeholder="Descrição"
+                           HeightRequest="100"
+                           WidthRequest="500"
+                           HorizontalOptions="Start"
+                           BackgroundColor="#3A3A3A"
+                           TextColor="White"
+                           PlaceholderColor="#999999"
+                            />      
+                </VerticalStackLayout>
+
+                
+                <VerticalStackLayout>
+                    <Label Text="Tipo de Conteúdo"
+                           TextColor="White" />
+
+                    <Grid ColumnDefinitions="Auto, Auto, Auto"
+                          ColumnSpacing="20">
+
+                        
+                        <HorizontalStackLayout Grid.Column="0" Spacing="8" VerticalOptions="Center">
+                            <RadioButton x:Name="VideoRadio"
+                         Content="Vídeo"
+                         TextColor="White"
+                         Value="Video" />
+                        </HorizontalStackLayout>
+
+                        
+                        <HorizontalStackLayout Grid.Column="1" Spacing="8" VerticalOptions="Center">
+                            <RadioButton x:Name="PodcastRadio"
+                         Content="Podcast"
+                         TextColor="White"
+                         Value="Podcast" />
+                        </HorizontalStackLayout>
+
+                      
+                        <HorizontalStackLayout Grid.Column="2" Spacing="8" VerticalOptions="Center">
+                            <RadioButton x:Name="MusicaRadio"
+                         Content="Música"
+                         TextColor="White"
+                         Value="Musica" />
+                        </HorizontalStackLayout>
+
+                    </Grid>
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+
+            
+            <VerticalStackLayout Grid.Column="1" Spacing="18">
+
+               
+                <Border BackgroundColor="#2C2C2C"
+                        HeightRequest="180"
+                        StrokeThickness="0"
+                        Padding="10"
+                        StrokeShape="RoundRectangle 15">
+                    <Grid>
+                        
+                    </Grid>
+                </Border>
+
+               
+                <VerticalStackLayout>
+                    <Label Text="Link do Conteúdo"
+                           TextColor="White" />
+
+                    <Grid ColumnDefinitions="*, Auto"
+                          VerticalOptions="Center">
+
+                        <Label Text="https://zuno/link"
+                               TextColor="#4FAAFF"
+                               VerticalOptions="Center"
+                               Grid.Column="0" />
+
+                        <ImageButton Source="copy.png"
+                                     WidthRequest="28"
+                                     HeightRequest="28"
+                                     BackgroundColor="Transparent"
+                                     Grid.Column="1" />
+                    </Grid>
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+        </Grid>
+
+        
+        <Button Grid.Row="2"
+                Text="Publicar"
+                FontAttributes="Bold"
+                WidthRequest="120"
+                HeightRequest="45"
+                CornerRadius="25"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="0,25,0,30"
+                BackgroundColor="White"
+                TextColor="Black" />
+
+    </Grid>
+
+    -->
+
 </ContentPage>

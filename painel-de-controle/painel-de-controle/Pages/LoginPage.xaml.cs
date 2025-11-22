@@ -31,7 +31,9 @@ public partial class LoginPage : ContentPage
     {
         var cliente = new HttpClient();
 
-        var response = await cliente.PostAsJsonAsync("https://zs3rxbr1-44387.brs.devtunnels.ms/api/CriadorAuth/login", new
+        var response = await cliente
+            .PostAsJsonAsync("https://zs3rxbr1-44387.brs.devtunnels.ms/api/CriadorAuth/login", 
+            new
         {
             email = EmailEntry.Text,
             senha = PasswordEntry.Text

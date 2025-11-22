@@ -3,11 +3,115 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="painel_de_controle.AnalysisPage"
              Title="AnalysisPage"
-             Shell.NavBarIsVisible="False">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Shell.NavBarIsVisible="False"
+             Background="Black">
+    
+    <Grid RowDefinitions="Auto, 12, Auto, 18, Auto"
+          ColumnDefinitions="*, 200">
+        <!-- Cabeçalho: Título e select de ano -->
+        <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+            <Label Text="Análise de desempenho"
+                   TextColor="White"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   Margin="20"/>
+
+            <!-- Picker do ano (pode ser substituído por um control custom) -->
+            <Picker Grid.Column="1"
+                    Title="2025"
+                    VerticalOptions="Center"
+                    WidthRequest="80"
+                    Margin="0,40,0,0"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TitleColor="#BBBBBB" />
+        </Grid>
+
+        <!-- Espaço -->
+        <BoxView Grid.Row="1" HeightRequest="1" BackgroundColor="Transparent"></BoxView>
+
+        <!-- Cards -->
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*, *"
+              RowDefinitions="Auto, Auto"
+              ColumnSpacing="14"
+              RowSpacing="14">
+
+            <!-- Card grande ocupando as duas colunas -->
+            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                    BackgroundColor="#1B1B1B"
+                    StrokeThickness="0"
+                    Padding="18"
+                    Margin="20,0,0,0"
+                    StrokeShape="RoundRectangle 12"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Start">
+                <Grid ColumnDefinitions="Auto, *" VerticalOptions="Center">
+                    <!-- Número grande -->
+                    <Label Text="10 mil"
+                           FontSize="40"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start" />
+
+                    <!-- Texto secundário à direita -->
+                    <Label Grid.Column="1" 
+                           Text="visualizações"
+                           FontSize="16"
+                           TextColor="#CCCCCC"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End" />
+                </Grid>
+            </Border>
+
+            <!-- Card Curtidas -->
+            <Border Grid.Row="1" Grid.Column="0"
+                    BackgroundColor="#1B1B1B"
+                    Margin="20,0,0,0"
+                    StrokeThickness="0"
+                    Padding="16"
+                    StrokeShape="RoundRectangle 12"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Start">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="5 mil"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           TextColor="White" />
+                    <Label Text="curtidas"
+                           FontSize="14"
+                           TextColor="#CCCCCC" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Card Inscritos -->
+            <Border Grid.Row="1" Grid.Column="1"
+                    BackgroundColor="#1B1B1B"
+                    StrokeThickness="0"
+                    Padding="16"
+                    StrokeShape="RoundRectangle 12"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Start">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="1.500 mil"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           TextColor="White" />
+                    <Label Text="inscritos"
+                           FontSize="14"
+                           TextColor="#CCCCCC" />
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+
+        <!-- Espaço -->
+        <BoxView Grid.Row="3" HeightRequest="1" BackgroundColor="Transparent" />
+
+   
+        
+    </Grid>
 </ContentPage>

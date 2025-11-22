@@ -4,7 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 namespace painel_de_controle.Models;
 
 // Modelo de dados para Categoria
-public partial class TipoModel : ObservableObject
+public partial class TipoConteudo : ObservableObject
 {
     public int Id { get; set; }
     public string Nome { get; set; }

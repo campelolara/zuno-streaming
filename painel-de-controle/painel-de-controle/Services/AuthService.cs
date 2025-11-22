@@ -42,7 +42,7 @@ namespace painel_de_controle.Services;
             Preferences.Set("creator_id", id.Value);
     }
 
-    public async Task<PerfilDTO?> GetMeAsync()
+    public async Task<Criador?> GetMeAsync()
     {
         var token = Preferences.Get("auth_token", null);
 
@@ -59,6 +59,6 @@ namespace painel_de_controle.Services;
             return null;
 
         var json = await response.Content.ReadAsStringAsync();
-        return JsonSerializer.Deserialize<PerfilDTO>(json);
+        return JsonSerializer.Deserialize<Criador>(json);
     }
 }

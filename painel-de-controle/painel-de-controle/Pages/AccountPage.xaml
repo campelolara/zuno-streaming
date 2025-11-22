@@ -4,7 +4,8 @@
              x:Class="painel_de_controle.AccountPage"
              xmlns:vm="clr-namespace:painel_de_controle.ViewModels"
              Title="AccountPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             Background="Black">
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="20">
 

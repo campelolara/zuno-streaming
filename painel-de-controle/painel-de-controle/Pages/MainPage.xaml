@@ -20,7 +20,7 @@
 
                 <CollectionView.ItemTemplate>
 
-                    <DataTemplate x:DataType="models:TipoModel">
+                    <DataTemplate x:DataType="models:TipoConteudo">
                         <Border Padding="20, 10" 
                                 BackgroundColor="Transparent"
                                 StrokeShape="RoundRectangle 20"
@@ -70,7 +70,7 @@
                         </GridItemsLayout>
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="models:ConteudoItemModel">
+                        <DataTemplate x:DataType="models:Conteudo">
                             <Border StrokeThickness="0">
                                 <VerticalStackLayout>
                                     <Border HeightRequest="150"

@@ -1,6 +1,6 @@
 namespace painel_de_controle.Models;
 
-public class PerfilDTO
+public class Criador
 {
     public int Id { get; set; }
     public string Nome { get; set; }
