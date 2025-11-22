@@ -32,6 +32,7 @@ public class TelaInicial extends AppCompatActivity {
             return insets;
         });
 
+
         //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
