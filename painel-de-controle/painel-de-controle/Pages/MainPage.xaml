@@ -2,63 +2,111 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:painel_de_controle.Models"
+             xmlns:vm="clr-namespace:painel_de_controle.ViewModels"
              x:Class="painel_de_controle.MainPage" 
+             x:DataType="vm:MeusConteudosViewModel"
              Title="Meus Conteudos" 
-             Background="Black"
+             Background="Black"      
              Shell.NavBarIsVisible="False">
     
-    <!--sujeito a alteração-->
-
-    <Grid>
+    <Grid ColumnDefinitions="*">
         <Grid Grid.Column="0" RowDefinitions="Auto, Auto, *" RowSpacing="10">
-            <Label Grid.Row="0" Text="Meus Conteúdos" TextColor="White"></Label>
-
-            <!--ItemsSource é onde pega as categorias do banco de dados-->
-            <CollectionView Grid.Row="1" ItemsSource="{Binding Tipos}" >
+            <Label Grid.Row="0" Text="Meus Conteúdos" TextColor="White" FontSize="30" Margin="20" FontAttributes="Bold"></Label>
+ 
+            <CollectionView Grid.Row="1" ItemsSource="{Binding Tipos}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
-<<<<<<< HEAD
+
                     <DataTemplate x:DataType="models:TipoModel">
                         <Border Padding="20, 10" 
                                 BackgroundColor="Transparent"
                                 StrokeShape="RoundRectangle 20"
                                 StrokeThickness="1">
+
                             <HorizontalStackLayout Spacing="5">
                                 <Label Text="{Binding Nome}" 
                                        TextColor="White" 
                                        VerticalOptions="Center">
                                     <Label.Triggers>
-                                        <DataTrigger
-                                            Binding="{Binding IsSelected}"
-                                            TargetType="Label"
-                                            Value="True">
-                                            <Setter Property="FontAttributes" Value="Bold"></Setter>
+                                        <DataTrigger Binding="{Binding IsSelected}"
+                                                     TargetType="Label"
+                                                     Value="True">
+                                            <Setter Property="FontAttributes" Value="Bold" />
                                         </DataTrigger>
                                     </Label.Triggers>
                                 </Label>
                             </HorizontalStackLayout>
+
                             <Border.Triggers>
                                 <DataTrigger TargetType="Border" Binding="{Binding IsSelected}" Value="True">
-                                    <Setter Property="BackgroundColor" Value="{StaticResource Blue}"></Setter>
-                                    <Setter Property="StrokeThickness" Value="0"></Setter>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Blue}" />
+                                    <Setter Property="StrokeThickness" Value="0" />
                                 </DataTrigger>
                             </Border.Triggers>
+
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:MeusConteudosViewModel}}, Path=SelectTipoCommand}"
+                                                CommandParameter="{Binding Id}" />
+                            </Border.GestureRecognizers>
+
                         </Border>
-=======
-                    <DataTemplate>
-                        <Frame Padding="10" BorderColor="White" CornerRadius="10">
-                            <Label Text="{Binding Nome}" TextColor="White" />
-                        </Frame>
->>>>>>> parent of 1a8a0d4 (painel de controle)
                     </DataTemplate>
+
                 </CollectionView.ItemTemplate>
-                
+
             </CollectionView>
+
+            <Grid Grid.Row="2">
+                <CollectionView ItemsSource="{Binding Conteudos}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" 
+                                         Span="4"
+                                         HorizontalItemSpacing="10"
+                                         VerticalItemSpacing="10"> 
+                        </GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:ConteudoItemModel">
+                            <Border StrokeThickness="0">
+                                <VerticalStackLayout>
+                                    <Border HeightRequest="150"
+                                            MinimumWidthRequest="150"
+                                            MaximumWidthRequest="250"
+                                            BackgroundColor="{StaticResource Gray600}"
+                                            StrokeShape="RoundRectangle 20"
+                                            StrokeThickness="0">
+                                    </Border>
+
+                                    <Grid ColumnDefinitions="*, Auto">
+                                        <VerticalStackLayout Grid.Column="0" Padding="10,10">
+                                            <Label Text="{Binding Titulo}" FontSize="15"/>
+                                            <HorizontalStackLayout Spacing="10">
+                                                <Label Text="{Binding Visualizacao}" FontSize="13" TextColor="{StaticResource Gray200}" />
+                                                <Label Text="Visualizações" FontSize="13" TextColor="{StaticResource Gray200}"/>
+                                            </HorizontalStackLayout>
+
+
+                                        </VerticalStackLayout>
+                                        
+                                        <ImageButton Grid.Column="1"
+                                                     Source="tres_pontos.png"
+                                                     Background="Transparent"
+                                                     VerticalOptions="Center" />
+                                        
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    
+                </CollectionView>
+            </Grid>
             
-            <Label Grid.Row="2" Text="lista de categorias" TextColor="White"></Label>
         </Grid>
     </Grid>
 

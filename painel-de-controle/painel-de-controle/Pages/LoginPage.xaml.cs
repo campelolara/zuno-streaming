@@ -1,3 +1,6 @@
+using System.Net.Http;
+using Preferences = Microsoft.Maui.Storage.Preferences;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace painel_de_controle;
@@ -7,41 +10,50 @@ public partial class LoginPage : ContentPage
 	public LoginPage()
 	{
         InitializeComponent();
-	}
+        Shell.SetNavBarIsVisible(this, false);
+    }
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
 
-        // Remove o menu lateral
-        Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
-
         // Remove o título da página
-        Shell.SetNavBarIsVisible(this, false);
+        NavigationPage.SetHasNavigationBar(this, false);
+
     }
 
-    //navega para a página de cadastro
+    //Login
+    private async void OnLoginButtonCliked(object sender, EventArgs e)
+    {
+        var cliente = new HttpClient();
+
+        var response = await cliente.PostAsJsonAsync("https://zs3rxbr1-44387.brs.devtunnels.ms/api/CriadorAuth/login", new
+        {
+            email = EmailEntry.Text,
+            senha = PasswordEntry.Text
+        });
+
+        if (!response.IsSuccessStatusCode)
+        {
+            var erro = await response.Content.ReadAsStringAsync();
+            await DisplayAlert("Erro", erro, "OK");
+            return;
+        }
+
+        var token = await response.Content.ReadAsStringAsync();
+
+        Preferences.Set("auth_token", token);
+
+        await DisplayAlert("Sucesso", "Logado!", "OK");
+
+        // Navega para mainPage,
+        Application.Current.MainPage = new AppShell();
+
+    }
+
+    //ir pra CadastroPage
     private async void OnRegisterLabelTapped(object sender, TappedEventArgs e)
     {
         await Navigation.PushAsync(new CadastroPage());
-    }
-    private async void OnLoginButtonCliked(object sender, EventArgs e)
-    {
-        if(string.IsNullOrEmpty(EmailEntry.Text) || string.IsNullOrEmpty(PasswordEntry.Text))
-        {
-            await DisplayAlert("Erro", "Por favor insira seu email e senha", "OK");
-            return;
-        }
-        //Simulando o processamento de login
-        if(EmailEntry.Text == "email" && PasswordEntry.Text == "123")
-        {
-            //navega para a página principal
-            await Navigation.PushAsync(new MainPage());
-        } else
-        {
-            await DisplayAlert("Erro", "Email ou senha inválidos", "OK");
-        }
-
-        
     }
 }

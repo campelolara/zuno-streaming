@@ -6,13 +6,15 @@ public partial class Conteudo
 
     public string Titulo { get; set; } = null!;
 
-    public string Tipo { get; set; } = null!;
+    public int TipoId { get; set; }
 
     public int CriadorId { get; set; }
 
     public byte[] Dados { get; set; } = null!;
 
     public long Tamanho { get; set; }
+
+    public virtual Tipo Tipo { get; set; } = null!;
 
     public virtual Criador Criador { get; set; } = null!;
 

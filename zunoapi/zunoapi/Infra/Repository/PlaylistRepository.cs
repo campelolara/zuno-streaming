@@ -32,6 +32,15 @@ namespace zunoapi.Infra.Repository
             _context.Add<Playlist>(playlist);
         }
 
+        public void UpdatePlaylist(Playlist playlist)
+        {
+            _context.Update<Playlist>(playlist);
+        }
+
+        public void DeletePlaylist(int id)
+        {
+            _context.Remove<Playlist>(GetPlaylistByID(id));
+        }
 
     }
 }
