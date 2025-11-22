@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zunoapp">
         <activity
-            android:name=".TelaVideo"
+            android:name=".TelaPlaylist"
             android:exported="false" />
         <activity
-            android:name=".PrimeiraTela"
+            android:name=".TelaVideo"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

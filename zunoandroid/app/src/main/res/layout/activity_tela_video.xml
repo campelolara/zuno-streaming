@@ -1,11 +1,292 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TelaVideo">
+    tools:context=".TelaVideo"
+    android:background="@color/black">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="0dp">
+
+        <!-- Thumbnail do Vídeo -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/img"
+
+            android:scaleType="centerCrop"
+            android:clipToOutline="true" />
+
+        <!-- Info do vídeo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <View
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/perfil"
+                />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Receita de Brownie"
+                    android:textColor="#fff"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/channel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Receitas"
+                    android:textColor="#ccc"
+                    android:textSize="13sp"
+                    android:paddingLeft="10dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Linha de botões -->
+
+        <!-- Cards de estatísticas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <!-- Like -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/container_escuro"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/baseline_favorite_border_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="6dp"
+                    android:text="5 mil"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Inscrever-se -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSubscribe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/chip_selected"
+                android:backgroundTint="@null"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:text="Inscreva-se"
+                android:textColor="@color/black"
+                app:backgroundTint="@null"
+                app:tint="@null" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <!-- Gostei -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/container_escuro"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="6dp"
+                android:layout_margin="5dp"
+                android:layout_marginVertical="4dp">
+
+                <TextView
+                    android:text="5 mil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:paddingStart="6dp"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:text="Gostei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="#fff"
+                    android:paddingStart="6dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Visualizações -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/container_escuro"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="6dp"
+                android:layout_margin="5dp"
+                android:layout_marginVertical="4dp">
+
+                <TextView
+                    android:text="10 mil"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="6dp"
+                    />
+
+                <TextView
+                    android:text="Visualizações"
+                    android:textColor="#aaa"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="6dp" />
+            </LinearLayout>
+
+            <!-- Tempo -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/container_escuro"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="6dp"
+                android:layout_margin="5dp"
+                android:layout_marginVertical="4dp">
+
+                <TextView
+                    android:text="5 d"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="6dp" />
+
+                <TextView
+                    android:text="Atrás"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="#fff"
+                    android:paddingStart="6dp"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Descrição -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="#111"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:text="Segue a receita: ...."
+                android:textColor="#fff"
+                android:textSize="14sp"
+                android:padding="10dp"
+                android:background="@drawable/container_escuro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start" />
+        </LinearLayout>
+
+        <!-- Comentários -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:text="Comentários"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="6dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/container_escuro"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/perfil"
+                    android:paddingTop="15dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:paddingStart="20dp"
+                    android:text="Adorei a Receita! Por favor poste mais des..."
+                    android:textColor="#ccc"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Outro vídeo (final da tela) -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/natureza"
+            android:background="@drawable/card1"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true" />
+    </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
