@@ -45,8 +45,10 @@ namespace zunoapi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, Conteudo conteudo)
         {
-            if (id != conteudo.Id)
-                return BadRequest();
+            var cont = await _repository.GetById(conteudo.Id);
+
+            if(cont == null)
+                return NotFound();
 
             _repository.Update(conteudo);
             await _repository.Save();
