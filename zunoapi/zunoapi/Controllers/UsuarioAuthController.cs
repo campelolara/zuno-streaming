@@ -13,32 +13,30 @@ namespace zunoapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CriadorAuthController : ControllerBase
+    public class UsuarioAuthController : ControllerBase
     {
-        private readonly IRepository<Criador> _repository;
+        private readonly IRepository<Usuario> _repository;
         private readonly IConfiguration _config;
 
-        public CriadorAuthController(IRepository<Criador> repository, IConfiguration config)
+        public UsuarioAuthController(IRepository<Usuario> repository, IConfiguration config)
         {
             _repository = repository;
             _config = config;
         }
 
+        // REGISTRAR
         [HttpPost("registrar")]
-        public async Task<IActionResult> Registrar(CriadorAuthDTO dto)
+        public async Task<IActionResult> Registrar(UsuarioAuthDTO dto)
         {
-            // Verificar se email já existe
-            var existe = (await _repository
-                .GetAll())
-                .Any(c => c.Email.ToLower() == dto.Email.ToLower());
+            var existe = (await _repository.GetAll())
+                .Any(u => u.Email.ToLower() == dto.Email.ToLower());
 
             if (existe)
                 return BadRequest("Email já cadastrado.");
 
-            // Criar hash da senha
             CriarSenha(dto.Senha, out byte[] hash, out byte[] salt);
 
-            var criador = new Criador
+            var usuario = new Usuario
             {
                 Nome = dto.Nome,
                 Email = dto.Email,
@@ -46,33 +44,31 @@ namespace zunoapi.Controllers
                 PasswordSalt = salt
             };
 
-            await _repository.Add(criador);
+            await _repository.Add(usuario);
             await _repository.Save();
 
-            return Ok("Criado com sucesso.");
+            return Ok("Usuário criado com sucesso.");
         }
-
 
         // LOGIN
         [HttpPost("login")]
-        public async Task<IActionResult> Login(CriadorAuthDTO dto)
+        public async Task<IActionResult> Login(UsuarioAuthDTO dto)
         {
-            var criadores = await _repository.GetAll();
-            var criador = criadores.FirstOrDefault(c => c.Email == dto.Email);
+            var usuarios = await _repository.GetAll();
+            var usuario = usuarios.FirstOrDefault(u => u.Email == dto.Email);
 
-            if (criador == null)
+            if (usuario == null)
                 return Unauthorized("Email incorreto.");
 
-            if (!VerificarSenha(dto.Senha, criador.PasswordHash, criador.PasswordSalt))
+            if (!VerificarSenha(dto.Senha, usuario.PasswordHash, usuario.PasswordSalt))
                 return Unauthorized("Senha incorreta.");
 
-            var token = GerarToken(criador);
+            var token = GerarToken(usuario);
 
-            return Ok(token);
+            return Ok(new { token });
         }
 
-
-        // MÉTODOS AUXILIARES
+        // AUXILIARES
         private void CriarSenha(string senha, out byte[] hash, out byte[] salt)
         {
             using var hmac = new HMACSHA512();
@@ -87,13 +83,13 @@ namespace zunoapi.Controllers
             return hashComputado.SequenceEqual(hash);
         }
 
-        private string GerarToken(Criador criador)
+        private string GerarToken(Usuario usuario)
         {
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, criador.Id.ToString()),
-                new Claim(ClaimTypes.Name, criador.Nome),
-                new Claim(ClaimTypes.Email, criador.Email)
+                new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
+                new Claim(ClaimTypes.Name, usuario.Nome),
+                new Claim(ClaimTypes.Email, usuario.Email)
             };
 
             var key = new SymmetricSecurityKey(
@@ -113,27 +109,26 @@ namespace zunoapi.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        // GET: api/auth/me
+        // GET: api/usuarioauth/me
         [HttpGet("me")]
         [Authorize]
         public async Task<IActionResult> Me()
         {
-            // Pega o ID do criador logado pelo token JWT
-            var criadorId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var usuarioId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            if (criadorId == null)
+            if (usuarioId == null)
                 return Unauthorized();
 
-            var criador = await _repository.GetById(int.Parse(criadorId));
+            var usuario = await _repository.GetById(int.Parse(usuarioId));
 
-            if (criador == null)
-                return NotFound("Criador não encontrado.");
+            if (usuario == null)
+                return NotFound("Usuário não encontrado.");
 
             return Ok(new
             {
-                criador.Id,
-                criador.Nome,
-                criador.Email
+                usuario.Id,
+                usuario.Nome,
+                usuario.Email
             });
         }
     }

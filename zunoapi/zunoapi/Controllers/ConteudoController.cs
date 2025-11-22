@@ -2,7 +2,6 @@
 using zunoapi.Infra.Interface;
 using zunoapi.Models;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace zunoapi.Controllers
 {
@@ -11,46 +10,45 @@ namespace zunoapi.Controllers
     public class ConteudoController : ControllerBase
     {
 
-        private IRepository<Criador> _repository;
+        private IRepository<Conteudo> _repository;
 
-        public ConteudoController(IRepository<Criador> repository)
+        public ConteudoController(IRepository<Conteudo> repository)
         {
             _repository = repository;
         }
 
-
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var criadores = await _repository.GetAll();
-            return Ok(criadores);
+            var conteudos = await _repository.GetAll();
+            return Ok(conteudos);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var criador = await _repository.GetById(id);
-            if (criador == null)
+            var conteudo = await _repository.GetById(id);
+            if (conteudo == null)
                 return NotFound();
 
-            return Ok(criador);
+            return Ok(conteudo);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Criador criador)
+        public async Task<IActionResult> Create(Conteudo conteudo)
         {
-            await _repository.Add(criador);
+            await _repository.Add(conteudo);
             await _repository.Save();
-            return CreatedAtAction(nameof(GetById), new { id = criador.Id }, criador);
+            return CreatedAtAction(nameof(GetById), new { id = conteudo.Id }, conteudo);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, Criador criador)
+        public async Task<IActionResult> Update(int id, Conteudo conteudo)
         {
-            if (id != criador.Id)
+            if (id != conteudo.Id)
                 return BadRequest();
 
-            _repository.Update(criador);
+            _repository.Update(conteudo);
             await _repository.Save();
             return NoContent();
         }
@@ -58,11 +56,11 @@ namespace zunoapi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var criador = await _repository.GetById(id);
-            if (criador == null)
+            var conteudo = await _repository.GetById(id);
+            if (conteudo == null)
                 return NotFound();
 
-            _repository.Delete(criador);
+            _repository.Delete(conteudo);
             await _repository.Save();
             return NoContent();
         }

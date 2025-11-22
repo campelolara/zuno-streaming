@@ -8,9 +8,9 @@ public partial class Criador
 
     public string Email { get; set; } = null!;
 
-    public byte[] PasswordHash { get; set; } = null!;
+    public byte[]? PasswordHash { get; set; } 
 
-    public byte[] PasswordSalt { get; set; } = null!;
+    public byte[]? PasswordSalt { get; set; }
 
     public virtual ICollection<Conteudo> Conteudos { get; set; } = new List<Conteudo>();
 

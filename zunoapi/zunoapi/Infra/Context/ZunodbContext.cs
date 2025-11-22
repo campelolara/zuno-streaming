@@ -72,8 +72,8 @@ public partial class ZunoContext : DbContext
             entity.Property(e => e.Nome)
                 .HasMaxLength(100)
                 .IsUnicode(false);
-            entity.Property(e => e.PasswordHash).HasMaxLength(500);
-            entity.Property(e => e.PasswordSalt).HasMaxLength(500);
+            entity.Property(e => e.PasswordHash).HasMaxLength(200);
+            entity.Property(e => e.PasswordSalt).HasMaxLength(200);
         });
 
         modelBuilder.Entity<Curtida>(entity =>

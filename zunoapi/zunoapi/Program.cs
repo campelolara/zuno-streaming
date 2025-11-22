@@ -48,6 +48,7 @@ builder.Services.AddDbContext<ZunoContext>( options =>
 });
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(IPlaylistRepository), typeof(PlaylistRepository));
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer(options =>
