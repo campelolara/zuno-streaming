@@ -2,12 +2,35 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="painel_de_controle.AccountPage"
+             xmlns:vm="clr-namespace:painel_de_controle.ViewModels"
              Title="AccountPage"
              Shell.NavBarIsVisible="False">
-    <VerticalStackLayout>
-        <VerticalStackLayout Padding="20">
-            <Label x:Name="NomeLabel" FontSize="24" />
-            <Label x:Name="EmailLabel" FontSize="18" />
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Minha Conta"
+                   FontSize="28"
+                   HorizontalOptions="Center" />
+
+            <Frame Padding="15" BackgroundColor="#eee">
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Nome:" FontAttributes="Bold" />
+                    <Label x:Name="NomeLabel" FontSize="18" />
+
+                    <Label Text="Email:" FontAttributes="Bold" />
+                    <Label x:Name="EmailLabel" FontSize="18" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button 
+            Text="Deslogar"
+            BackgroundColor="Red"
+            TextColor="White"
+            CornerRadius="10"
+            Clicked="OnLogoutClicked"/>
+            
+
         </VerticalStackLayout>
-    </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

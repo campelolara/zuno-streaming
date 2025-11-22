@@ -7,6 +7,9 @@ namespace painel_de_controle.ViewModels;
 
 public partial class MeusConteudosViewModel : ObservableObject
 {
+ 
+    public int CreatorId { get; }
+
     public ObservableCollection<TipoModel> Tipos { get; }
     public ObservableCollection<ConteudoItemModel> Conteudos { get; }
 
@@ -15,12 +18,21 @@ public partial class MeusConteudosViewModel : ObservableObject
 
     public MeusConteudosViewModel()
     {
+        //tem que ter isso
+        CreatorId = Preferences.Get("creator_id", 0);
+
         Tipos = new ObservableCollection<TipoModel>();
         Conteudos = new ObservableCollection<ConteudoItemModel>();
     }
 
     public async ValueTask InitializeAsync()
     {
+
+        var creatorId = Preferences.Get("creator_id", 0);
+        Console.WriteLine($"CRIADOR LOGADO = {creatorId}");
+
+
+
         // tipos temporários (mock)
         var tiposTemporarios = new List<TipoModel>
         {

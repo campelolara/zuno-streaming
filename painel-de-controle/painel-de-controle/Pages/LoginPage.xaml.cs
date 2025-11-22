@@ -2,15 +2,19 @@ using System.Net.Http;
 using Preferences = Microsoft.Maui.Storage.Preferences;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using painel_de_controle.Services;
 
 namespace painel_de_controle;
 
 public partial class LoginPage : ContentPage
 {
-	public LoginPage()
+    private readonly AuthService _authService;
+    public LoginPage()
 	{
         InitializeComponent();
         Shell.SetNavBarIsVisible(this, false);
+
+        _authService = new AuthService();
     }
 
     protected override void OnAppearing()
@@ -42,7 +46,8 @@ public partial class LoginPage : ContentPage
 
         var token = await response.Content.ReadAsStringAsync();
 
-        Preferences.Set("auth_token", token);
+        // SALVA TOKEN + ID DO CRIADOR
+        _authService.SaveTokenAndCreatorId(token);
 
         await DisplayAlert("Sucesso", "Logado!", "OK");
 
