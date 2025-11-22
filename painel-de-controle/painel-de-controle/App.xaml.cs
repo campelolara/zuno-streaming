@@ -10,15 +10,16 @@ namespace painel_de_controle
         }   
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new NavigationPage(new LoginPage())); // pra iniciar na tela de login
-            //var window = new Window(new AppShell());
+            //return new Window(new NavigationPage(new LoginPage())); // pra iniciar na tela de login
+            var window = new Window(new AppShell());
 
-            // Navegar para o Login depois que o Shell existir
-            //window.Created += (s, e) =>
-            //{
-            //    Shell.Current.GoToAsync("//LoginPage");
-            //};
-            //return window;
+            //depois por como comentario
+            //Navegar para o Login depois que o Shell existir
+            window.Created += (s, e) =>
+            {
+                Shell.Current.GoToAsync("//LoginPage");
+            };
+            return window;
         }
     }
 }

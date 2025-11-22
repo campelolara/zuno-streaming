@@ -11,9 +11,9 @@
     
     <Grid ColumnDefinitions="*">
         <Grid Grid.Column="0" RowDefinitions="Auto, Auto, *" RowSpacing="10">
-            <Label Grid.Row="0" Text="Meus Conteúdos" TextColor="White"></Label>
+            <Label Grid.Row="0" Text="Meus Conteúdos" TextColor="White" FontSize="30" Margin="20" FontAttributes="Bold"></Label>
  
-            <CollectionView Grid.Row="1" ItemsSource="{Binding Tipos}" >
+            <CollectionView Grid.Row="1" ItemsSource="{Binding Tipos}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
                 </CollectionView.ItemsLayout>
@@ -71,24 +71,32 @@
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="models:ConteudoItemModel">
-                            <Border StrokeThickness="1">
+                            <Border StrokeThickness="0">
                                 <VerticalStackLayout>
                                     <Border HeightRequest="150"
-                                            WidthRequest="250"
-                                            BackgroundColor="{StaticResource Gray400}"
-                                            StrokeShape="RoundRectangle 20">
+                                            MinimumWidthRequest="150"
+                                            MaximumWidthRequest="250"
+                                            BackgroundColor="{StaticResource Gray600}"
+                                            StrokeShape="RoundRectangle 20"
+                                            StrokeThickness="0">
                                     </Border>
 
                                     <Grid ColumnDefinitions="*, Auto">
-                                        <VerticalStackLayout Grid.Column="0">
-                                            <Label Text="{Binding Titulo}" />
-                                            <Label Text="{Binding Visualizacao}" />
-                                        </VerticalStackLayout>
+                                        <VerticalStackLayout Grid.Column="0" Padding="10,10">
+                                            <Label Text="{Binding Titulo}" FontSize="15"/>
+                                            <HorizontalStackLayout Spacing="10">
+                                                <Label Text="{Binding Visualizacao}" FontSize="13" TextColor="{StaticResource Gray200}" />
+                                                <Label Text="Visualizações" FontSize="13" TextColor="{StaticResource Gray200}"/>
+                                            </HorizontalStackLayout>
 
+
+                                        </VerticalStackLayout>
+                                        
                                         <ImageButton Grid.Column="1"
                                                      Source="tres_pontos.png"
                                                      Background="Transparent"
-                                                     VerticalOptions="Center" />    
+                                                     VerticalOptions="Center" />
+                                        
                                     </Grid>
                                 </VerticalStackLayout>
 

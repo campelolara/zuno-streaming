@@ -48,12 +48,12 @@ public partial class MeusConteudosViewModel : ObservableObject
 
         var conteudosTemporarios = new List<ConteudoItemModel>
         {
-            new ConteudoItemModel { Id = 1, Titulo = "Titulo1", Visualizacao = 40},
-            new ConteudoItemModel { Id = 2, Titulo = "Titulo2", Visualizacao = 80},
-            new ConteudoItemModel { Id = 3, Titulo = "Titulo3", Visualizacao = 120},
-            new ConteudoItemModel { Id = 4, Titulo = "Titulo4", Visualizacao = 160},
-            new ConteudoItemModel { Id = 5, Titulo = "Titulo5", Visualizacao = 200},
-            new ConteudoItemModel { Id = 6, Titulo = "Titulo6", Visualizacao = 240},
+            new ConteudoItemModel { Id = 1, Titulo = "Titulo1", Visualizacao = 40, TipoId=1},
+            new ConteudoItemModel { Id = 2, Titulo = "Titulo2", Visualizacao = 80, TipoId=2},
+            new ConteudoItemModel { Id = 3, Titulo = "Titulo3", Visualizacao = 120, TipoId=1},
+            new ConteudoItemModel { Id = 4, Titulo = "Titulo4", Visualizacao = 160, TipoId=2},
+            new ConteudoItemModel { Id = 5, Titulo = "Titulo5", Visualizacao = 200, TipoId=1},
+            new ConteudoItemModel { Id = 6, Titulo = "Titulo6", Visualizacao = 240, TipoId=1},
         };
 
         foreach (var c in conteudosTemporarios)

@@ -8,6 +8,8 @@ public class ConteudoItemModel : ObservableObject
     public int Id { get; set; }
     public string Titulo { get; set; }
     public int Visualizacao { get; set; }
+    public int TipoId { get; set; }
+
 }
 
 
