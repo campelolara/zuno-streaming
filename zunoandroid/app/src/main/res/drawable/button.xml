@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <corners android:radius="20dp"/>
-    <stroke android:color="@color/white" android:width="2dp"/>
+    <stroke android:color="@color/cinzaImagem" android:width="2dp"/>
     <gradient
         android:type="radial"
         android:gradientRadius="400dp"
-        android:startColor="#05FFFFFF"
-        android:centerColor="#50FFFFFF"
-        android:endColor="#10FFFFFF"
+        android:startColor="#4A4B4C"
+        android:centerColor="#4A4B4C"
+        android:endColor="#4A4B4C"
         />
 </shape>

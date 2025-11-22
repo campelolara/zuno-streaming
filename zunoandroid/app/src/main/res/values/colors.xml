@@ -9,4 +9,10 @@
     <color name="blue_black">#020312</color>
     <color name="blue_dark">#0A0F2A</color>
     <color name="black_transparent">#900c0f13</color>
+    <color name="cinzaPadrao">#808080</color>
+    <color name="cinzaClaro">#CCCCCC</color>
+    <color name="cinzaEscuro">#666666</color>
+    <color name="cinzaImagem">#4A4B4C</color>
+
+
 </resources>

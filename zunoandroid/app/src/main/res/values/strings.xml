@@ -22,5 +22,13 @@
     <string name="inicio">Início</string>
     <string name="criar">Criar</string>
     <string name="perfil">Perfil</string>
+    <string name="zuno">ZUNO</string>
+    <string name="todo">TODO</string>
+    <string name="podcasts">Podcasts</string>
+    <string name="videos">Videos</string>
+    <string name="m_sicas">Músicas</string>
+    <string name="menu" />
+    <string name="_000_mil_visualiza_es_h_0_dias">000 mil visualizações · há 0 dias</string>
+    <string name="search" />
 
 </resources>

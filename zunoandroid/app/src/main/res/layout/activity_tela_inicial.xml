@@ -22,12 +22,13 @@
     <!--Container dos fragmentos de páginas
     do menu: inicio, mais e perfil
     -->
+
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
-        />
+        android:layout_marginTop="0dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
