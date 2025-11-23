@@ -10,9 +10,9 @@ public partial class Conteudo
 
     public int CriadorId { get; set; }
 
-    public byte[] Dados { get; set; } = null!;
+    public byte[]? Dados { get; set; } 
 
-    public long Tamanho { get; set; }
+    public long? Tamanho { get; set; }
 
     public virtual Tipo Tipo { get; set; } = null!;
 
