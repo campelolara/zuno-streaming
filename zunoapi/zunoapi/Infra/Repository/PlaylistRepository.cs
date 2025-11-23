@@ -12,14 +12,6 @@ namespace zunoapi.Infra.Repository
         public readonly ZunoContext _context; 
         public readonly DbSet<Playlist> _dbSet;       
 
-        //referência ao contexto do banco de dados
-        protected readonly ZunoContext _context;
-        //referência ao conjunto de entidades do tipo T que serão manipuladas
-        protected readonly DbSet<Playlist> _dbSet;      
-
-        protected readonly ZunoContext _context;
-        protected readonly DbSet<Playlist> _dbSet;
-
         public PlaylistRepository(ZunoContext context)
         {
             _context = context;
@@ -58,11 +50,8 @@ namespace zunoapi.Infra.Repository
 
         }
    
+    }    
 
-
-        }    
-
-        }
-
-    }
 }
+
+ 
