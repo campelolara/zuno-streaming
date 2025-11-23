@@ -14,22 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zunoapp">
         <activity
-            android:name=".TelaVideo"
+            android:name=".TelaPlaylist"
             android:exported="false" />
         <activity
-            android:name=".PrimeiraTela"
+            android:name=".TelaVideo"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".FormLogin"
+            android:name=".TelaInicial"
             android:exported="false" />
         <activity
-            android:name=".FormCadastro"
+            android:name=".FormLogin"
             android:exported="false" /> <!-- aqui tem que ser a FormLogin -->
         <activity
-            android:name=".TelaInicial"
+            android:name=".FormCadastro"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
