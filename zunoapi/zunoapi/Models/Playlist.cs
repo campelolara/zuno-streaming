@@ -8,8 +8,6 @@ public partial class Playlist
 
     public int UsuarioId { get; set; }
 
-    public virtual Criador? Criador { get; set; }
-
     public virtual ICollection<ItemPlaylist> ItemPlaylists { get; set; } = new List<ItemPlaylist>();
 
     public virtual Usuario Usuario { get; set; } = null!;

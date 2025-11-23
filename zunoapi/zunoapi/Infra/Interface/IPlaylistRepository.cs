@@ -1,4 +1,5 @@
-﻿using zunoapi.Models;
+﻿using zunoapi.Infra.DTO;
+using zunoapi.Models;
 
 namespace zunoapi.Infra.Interface
 {
