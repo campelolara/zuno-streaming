@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using zunoapi.Infra.Context;
+using zunoapi.Infra.DTO;
 using zunoapi.Infra.Interface;
 using zunoapi.Models;
 
@@ -7,8 +9,8 @@ namespace zunoapi.Infra.Repository
 {
     public class PlaylistRepository : IPlaylistRepository
     {
-        protected readonly ZunoContext _context;
-        protected readonly DbSet<Playlist> _dbSet;
+        public readonly ZunoContext _context; 
+        public readonly DbSet<Playlist> _dbSet;       
 
         public PlaylistRepository(ZunoContext context)
         {
@@ -24,7 +26,7 @@ namespace zunoapi.Infra.Repository
         public Playlist GetPlaylistByID(int id)
         {
             return _dbSet.Find(id);
-
+        
         }
 
         public void AddPlaylist(Playlist playlist)
@@ -46,6 +48,7 @@ namespace zunoapi.Infra.Repository
         {
             await _context.SaveChangesAsync();
         }
+ 1    
 
     }
 }
