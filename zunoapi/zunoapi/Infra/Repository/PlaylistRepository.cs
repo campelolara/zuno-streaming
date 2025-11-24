@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using zunoapi.Infra.Context;
+using zunoapi.Infra.DTO;
 using zunoapi.Infra.Interface;
 using zunoapi.Models;
 
@@ -7,8 +8,9 @@ namespace zunoapi.Infra.Repository
 {
     public class PlaylistRepository : IPlaylistRepository
     {
-        protected readonly ZunoContext _context;
-        protected readonly DbSet<Playlist> _dbSet;
+
+        public readonly ZunoContext _context; 
+        public readonly DbSet<Playlist> _dbSet;       
 
         public PlaylistRepository(ZunoContext context)
         {
@@ -44,7 +46,11 @@ namespace zunoapi.Infra.Repository
         public async Task Save()
         {
             await _context.SaveChangesAsync();
-        }
 
-    }
+        }
+   
+    }    
+
 }
+
+ 

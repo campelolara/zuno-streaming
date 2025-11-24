@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using zunoapi.Infra.DTO;
+using zunoapi.Infra.DTO;
 using zunoapi.Infra.Interface;
 using zunoapi.Models;
 
@@ -49,6 +50,11 @@ namespace zunoapi.Controllers
             return playlistDTO;
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreatePlaylist(Playlist model)
+        {
+            _repository.AddPlaylist(model);
+
         [HttpPost("criar")]
         public async Task<IActionResult> CreatePlaylist(PlaylistDTO model)
         {
@@ -59,6 +65,7 @@ namespace zunoapi.Controllers
             };
 
             _repository.AddPlaylist(playlist);
+
             await _repository.Save();
 
             return Ok(model);
